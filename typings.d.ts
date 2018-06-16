@@ -1,0 +1,5 @@
+declare module 'react-rte'
+declare module 'react-time-ago'
+declare module 'javascript-time-ago'
+declare module 'javascript-time-ago/locale/pt'
+declare module 'javascript-time-ago/locale/en'
