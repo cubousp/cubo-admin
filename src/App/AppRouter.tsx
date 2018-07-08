@@ -4,8 +4,8 @@ import { createBrowserHistory } from 'history'
 import * as React from 'react'
 import { connect } from 'react-redux'
 import { Redirect, Route, Switch } from 'react-router-dom'
+import Activities from '../scenes/Activities/Activities'
 import Analytics from '../scenes/Analytics/Anlytics'
-import Events from '../scenes/Events/Events'
 import FeedContainer from '../scenes/Feed/FeedContainer'
 import LoginContainer from '../scenes/Login/LoginContainer'
 import Participants from '../scenes/Participants/Participants'
@@ -44,7 +44,7 @@ const AppRouter = () => (
             <AppShell>
                 <PrivateRoute exact={true} path='/' component={FeedContainer} />
                 <PrivateRoute exact={true} path='/analytics' component={Analytics} />
-                <PrivateRoute exact={true} path='/events' component={Events} />
+                <PrivateRoute exact={true} path='/activities' component={Activities} />
                 <PrivateRoute exact={true} path='/feed' component={FeedContainer} />
                 <PrivateRoute exact={true} path='/participants' component={Participants} />
             </AppShell>

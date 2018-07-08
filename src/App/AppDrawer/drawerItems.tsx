@@ -14,10 +14,9 @@ export const drawerItems: IDrawerItem[] = [
         label: 'Feed',
         link: '/feed'
     }, {
-        disabled: true,
         icon: <Dashboard/>,
         label: 'Atividades',
-        link: '/events'
+        link: '/activities'
     }, {
         disabled: true,
         icon: <People/>,
