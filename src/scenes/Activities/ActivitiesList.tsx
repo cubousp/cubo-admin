@@ -15,6 +15,7 @@ const styles = (theme: Theme) => ({
 interface IProps {
     activities: any[]
 }
+
 const ActivitiesList = withStyles(styles)<IProps>(({ classes, activities  }) => (
         <div className={classes.root}>
             <List>

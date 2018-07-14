@@ -21,7 +21,7 @@ interface IProps {
 }
 
 const ActivitiesListCard = withStyles(styles)<IProps>(({ classes, activity }) => (
-    <ListItem>
+    <ListItem button={true}>
         <Avatar
             name={mapKind[activity.kind]}
             size={56}
