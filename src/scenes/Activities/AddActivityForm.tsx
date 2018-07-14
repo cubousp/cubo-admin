@@ -13,6 +13,7 @@ const styles = (theme: Theme) => ({
     container: {
         display: 'flex' as any,
         flexDirection: 'column' as any,
+        flexShrink: 0,
         margin: 32
     },
     menu: {
@@ -27,14 +28,14 @@ const styles = (theme: Theme) => ({
     },
     expansionPanel: {
         marginTop: 32,
-        boxShadow: 'none'
+        boxShadow: 'none',
+        '&:before': {
+            content: 'none'
+        }
     },
     expansionPanelSummary: {
-        padding: 16,
-        width: 128,
-        before: {
-            content: ''
-        }
+        padding: 0,
+        width: 160,
     },
     expansionPanelDetails: {
         display: 'flex' as any,
@@ -66,7 +67,8 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
         shortDescription: undefined,
         longDescription: undefined,
         internalComment: undefined,
-        speaker: undefined, // TODO
+        speakerName: undefined,
+        speakerDescription: undefined,
         inscriptionBeginsAt: undefined, // TODO
         inscriptionEndsAt: undefined, // TODO
         totalVacancies: undefined,
@@ -82,6 +84,7 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
         const { classes } = this.props
         return (
             <form className={classes.container} noValidate={true} autoComplete='off'>
+                <Typography className={classes.moreOptions}>Informações básicas</Typography>
                 <TextField
                     id='title'
                     label='Tĩtulo'
@@ -112,6 +115,9 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                         </MenuItem>
                     ))}
                 </TextField>
+                <Typography className={classes.moreOptions} style={{ marginTop: 48 }}>
+                    Informações complementares
+                </Typography>
                 <TextField
                     id='shortDescription'
                     label='Resumo da atividade'
@@ -131,6 +137,28 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                     value={this.state.totalVacancies}
                     onChange={this.handleChange('totalVacancies')}
                     className={classNames(classes.textField, classes.short)}
+                    margin='normal'
+                />
+                <Typography className={classes.moreOptions} style={{ marginTop: 48 }}>
+                    Dados do palestrante
+                </Typography>
+                <TextField
+                    id='speakerName'
+                    label='Nome'
+                    value={this.state.speakerName}
+                    onChange={this.handleChange('speakerName')}
+                    className={classNames(classes.textField, classes.short)}
+                    margin='normal'
+                />
+                <TextField
+                    id='speakerDescription'
+                    label='Descrição'
+                    value={this.state.speakerDescription}
+                    onChange={this.handleChange('speakerDescription')}
+                    className={classes.textField}
+                    multiline={true}
+                    rowsMax='2'
+                    rows={2}
                     margin='normal'
                 />
                 <ExpansionPanel className={classes.expansionPanel}>
@@ -163,133 +191,6 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                         />
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
-                {/*<TextField*/}
-                    {/*error={true}*/}
-                    {/*id='error'*/}
-                    {/*label='Error'*/}
-                    {/*defaultValue='Hello World'*/}
-                    {/*className={classes.textField}*/}
-                    {/*margin='normal'*/}
-                {/*/>*/}
-                {/*<TextField*/}
-                    {/*id='password-input'*/}
-                    {/*label='Password'*/}
-                    {/*className={classes.textField}*/}
-                    {/*type='password'*/}
-                    {/*autoComplete='current-password'*/}
-                    {/*margin='normal'*/}
-                {/*/>*/}
-                {/*<TextField*/}
-                    {/*id='read-only-input'*/}
-                    {/*label='Read Only'*/}
-                    {/*defaultValue='Hello World'*/}
-                    {/*className={classes.textField}*/}
-                    {/*margin='normal'*/}
-                    {/*InputProps={{*/}
-                        {/*readOnly: true,*/}
-                    {/*} as any}*/}
-                {/*/>*/}
-                {/*<TextField*/}
-                    {/*id='multiline-flexible'*/}
-                    {/*label='Multiline'*/}
-                    {/*multiline={true}*/}
-                    {/*rowsMax='4'*/}
-                    {/*value={this.state.multiline}*/}
-                    {/*onChange={this.handleChange('multiline')}*/}
-                    {/*className={classes.textField}*/}
-                    {/*margin='normal'*/}
-                {/*/>*/}
-                {/*<TextField*/}
-                    {/*id='multiline-static'*/}
-                    {/*label='Multiline'*/}
-                    {/*multiline={true}*/}
-                    {/*rows='4'*/}
-                    {/*defaultValue='Default Value'*/}
-                    {/*className={classes.textField}*/}
-                    {/*margin='normal'*/}
-                {/*/>*/}
-                {/*<TextField*/}
-                    {/*id='helperText'*/}
-                    {/*label='Helper text'*/}
-                    {/*defaultValue='Default Value'*/}
-                    {/*className={classes.textField}*/}
-                    {/*helperText='Some important text'*/}
-                    {/*margin='normal'*/}
-                {/*/>*/}
-                {/*<TextField*/}
-                    {/*id='with-placeholder'*/}
-                    {/*label='With placeholder'*/}
-                    {/*placeholder='Placeholder'*/}
-                    {/*className={classes.textField}*/}
-                    {/*margin='normal'*/}
-                {/*/>*/}
-                {/*<TextField*/}
-                    {/*id='textarea'*/}
-                    {/*label='With placeholder multiline'*/}
-                    {/*placeholder='Placeholder'*/}
-                    {/*multiline={true}*/}
-                    {/*className={classes.textField}*/}
-                    {/*margin='normal'*/}
-                {/*/>*/}
-                {/*<TextField*/}
-                    {/*id='number'*/}
-                    {/*label='Number'*/}
-                    {/*value={this.state.age}*/}
-                    {/*onChange={this.handleChange('age')}*/}
-                    {/*type='number'*/}
-                    {/*className={classes.textField}*/}
-                    {/*InputLabelProps={{*/}
-                        {/*shrink: true,*/}
-                    {/*}}*/}
-                    {/*margin='normal'*/}
-                {/*/>*/}
-                {/*<TextField*/}
-                    {/*id='search'*/}
-                    {/*label='Search field'*/}
-                    {/*type='search'*/}
-                    {/*className={classes.textField}*/}
-                    {/*margin='normal'*/}
-                {/*/>*/}
-
-                    {/*{currencies.map(option => (*/}
-                        {/*<MenuItem key={option.value} value={option.value}>*/}
-                            {/*{option.label}*/}
-                        {/*</MenuItem>*/}
-                    {/*))}*/}
-                {/*</TextField>*/}
-                {/*<TextField*/}
-                    {/*id='select-currency-native'*/}
-                    {/*select={true}*/}
-                    {/*label='Native select'*/}
-                    {/*className={classes.textField}*/}
-                    {/*value={this.state.currency}*/}
-                    {/*onChange={this.handleChange('currency')}*/}
-                    {/*SelectProps={{*/}
-                        {/*MenuProps: {*/}
-                            {/*className: classes.menu,*/}
-                        {/*},*/}
-                        {/*native: true,*/}
-                    {/*}}*/}
-                    {/*helperText='Please select your currency'*/}
-                    {/*margin='normal'*/}
-                {/*>*/}
-                    {/*{currencies.map(option => (*/}
-                        {/*<option key={option.value} value={option.value}>*/}
-                            {/*{option.label}*/}
-                        {/*</option>*/}
-                    {/*))}*/}
-                {/*</TextField>*/}
-                {/*<TextField*/}
-                    {/*id='full-width'*/}
-                    {/*label='Label'*/}
-                    {/*InputLabelProps={{*/}
-                        {/*shrink: true,*/}
-                    {/*}}*/}
-                    {/*placeholder='Placeholder'*/}
-                    {/*helperText='Full width!'*/}
-                    {/*fullWidth={true}*/}
-                    {/*margin='normal'*/}
-                {/*/>*/}
             </form>
         )
     }
