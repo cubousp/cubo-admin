@@ -1,6 +1,11 @@
+import ExpansionPanel from '@material-ui/core/ExpansionPanel/ExpansionPanel'
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails/ExpansionPanelDetails'
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary/ExpansionPanelSummary'
 import MenuItem from '@material-ui/core/MenuItem/MenuItem'
 import { Theme, WithStyles, withStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField/TextField'
+import Typography from '@material-ui/core/Typography/Typography'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import * as classNames from 'classnames'
 import * as React from 'react'
 
@@ -8,7 +13,7 @@ const styles = (theme: Theme) => ({
     container: {
         display: 'flex' as any,
         flexDirection: 'column' as any,
-        margin: 16
+        margin: 32
     },
     menu: {
         width: 200,
@@ -19,6 +24,25 @@ const styles = (theme: Theme) => ({
     },
     short: {
         width: 280
+    },
+    expansionPanel: {
+        marginTop: 32,
+        boxShadow: 'none'
+    },
+    expansionPanelSummary: {
+        padding: 16,
+        width: 128,
+        before: {
+            content: ''
+        }
+    },
+    expansionPanelDetails: {
+        display: 'flex' as any,
+        flexDirection: 'column' as any,
+    },
+    moreOptions: {
+        fontSize: 16,
+        fontWeight: '600' as any
     }
 })
 
@@ -33,7 +57,7 @@ const mapKind = {
 
 const kinds = Object.keys(mapKind).map((key) => ({ label: mapKind[key], value: key }))
 
-class AddActivityForm extends React.Component<WithStyles<'container' | 'textField' | 'menu' | 'short'>> {
+class AddActivityForm extends React.Component<WithStyles<'container' | 'textField' | 'menu' | 'short' | 'expansionPanel' | 'expansionPanelSummary' | 'moreOptions' | 'expansionPanelDetails'>> {
     public state = {
         title: undefined,
         startsAt: new Date(), // TODO
@@ -109,29 +133,36 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                     className={classNames(classes.textField, classes.short)}
                     margin='normal'
                 />
-                <TextField
-                    id='longDescription'
-                    label='Observações para os participantes'
-                    multiline={true}
-                    rowsMax='3'
-                    rows={3}
-                    value={this.state.longDescription}
-                    onChange={this.handleChange('longDescription')}
-                    helperText={'Você pode incluir observações e instruções para os participantes, ex: Trazer seu próprio kit clínico'}
-                    className={classes.textField}
-                    margin='normal'
-                />
-                <TextField
-                    id='internalComment'
-                    label='Comentários internos'
-                    multiline={true}
-                    rows={5}
-                    value={this.state.internalComment}
-                    onChange={this.handleChange('internalComment')}
-                    helperText={'Comentários internos para a organização. Esse campo não será visível para os participantes. Ex: "Lembrar de trazer os brindes para a sala meia hora antes"'}
-                    className={classes.textField}
-                    margin='normal'
-                />
+                <ExpansionPanel className={classes.expansionPanel}>
+                    <ExpansionPanelSummary className={classes.expansionPanelSummary} expandIcon={<ExpandMoreIcon />}>
+                        <Typography className={classes.moreOptions}>Mais opções</Typography>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+                        <TextField
+                            id='longDescription'
+                            label='Observações para os participantes'
+                            multiline={true}
+                            rowsMax='3'
+                            rows={3}
+                            value={this.state.longDescription}
+                            onChange={this.handleChange('longDescription')}
+                            helperText={'Você pode incluir observações e instruções para os participantes, ex: Trazer seu próprio kit clínico'}
+                            className={classes.textField}
+                            margin='normal'
+                        />
+                        <TextField
+                            id='internalComment'
+                            label='Comentários internos'
+                            multiline={true}
+                            rows={5}
+                            value={this.state.internalComment}
+                            onChange={this.handleChange('internalComment')}
+                            helperText={'Comentários internos para a organização. Esse campo não será visível para os participantes. Ex: "Lembrar de trazer os brindes para a sala meia hora antes"'}
+                            className={classes.textField}
+                            margin='normal'
+                        />
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
                 {/*<TextField*/}
                     {/*error={true}*/}
                     {/*id='error'*/}

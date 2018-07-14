@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8255f5f-3be1-443c-a590-76f8e1ccd180" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/scenes/Activities/AddActivity.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenes/Activities/AddActivityForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/Activities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/Activities.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivitiesListCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivitiesListCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/tslint.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/AddActivityForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/AddActivityForm.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -51,10 +40,12 @@
       <file leaf-file-name="AddActivityForm.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scenes/Activities/AddActivityForm.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="104" selection-start-line="104" selection-end-line="104" />
+            <state relative-caret-position="290">
+              <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
               <folding>
-                <element signature="e#0#58#0" expanded="true" />
+                <element signature="e#0#76#0" expanded="true" />
+                <element signature="e#459#547#0" />
+                <element signature="e#560#586#0" />
               </folding>
             </state>
           </provider>
@@ -310,12 +301,12 @@
       <workItem from="1529178192663" duration="11165000" />
       <workItem from="1530972013932" duration="1258000" />
       <workItem from="1531022073243" duration="20737000" />
-      <workItem from="1531564973951" duration="12944000" />
+      <workItem from="1531564973951" duration="15946000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171055000" />
+    <option name="totallyTimeSpent" value="174057000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -753,10 +744,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Activities/AddActivityForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        <state relative-caret-position="290">
+          <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
           <folding>
-            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#0#76#0" expanded="true" />
+            <element signature="e#459#547#0" />
+            <element signature="e#560#586#0" />
           </folding>
         </state>
       </provider>
