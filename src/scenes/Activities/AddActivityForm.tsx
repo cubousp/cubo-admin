@@ -5,8 +5,10 @@ import MenuItem from '@material-ui/core/MenuItem/MenuItem'
 import { Theme, WithStyles, withStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField/TextField'
 import Typography from '@material-ui/core/Typography/Typography'
+import { AccessTime, ChevronLeft, ChevronRight, DateRange, Event } from '@material-ui/icons'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import * as classNames from 'classnames'
+import { DateTimePicker } from 'material-ui-pickers'
 import * as React from 'react'
 
 const styles = (theme: Theme) => ({
@@ -14,7 +16,7 @@ const styles = (theme: Theme) => ({
         display: 'flex' as any,
         flexDirection: 'column' as any,
         flexShrink: 0,
-        margin: 32
+        margin: 32,
     },
     menu: {
         width: 200,
@@ -24,14 +26,14 @@ const styles = (theme: Theme) => ({
         marginRight: theme.spacing.unit,
     },
     short: {
-        width: 280
+        width: 280,
     },
     expansionPanel: {
         marginTop: 32,
         boxShadow: 'none',
         '&:before': {
-            content: 'none'
-        }
+            content: 'none',
+        },
     },
     expansionPanelSummary: {
         padding: 0,
@@ -43,9 +45,10 @@ const styles = (theme: Theme) => ({
     },
     moreOptions: {
         fontSize: 16,
-        fontWeight: '600' as any
-    }
+        fontWeight: '600' as any,
+    },
 })
+
 
 const mapKind = {
     'LECTURE': 'Palestra',
@@ -53,24 +56,24 @@ const mapKind = {
     'HANDSON': 'Hands-On',
     'STAND': 'Stand',
     'SURGERY': 'Cirurgia ao vivo',
-    'WORKSHOP': 'Workshop'
+    'WORKSHOP': 'Workshop',
 }
 
-const kinds = Object.keys(mapKind).map((key) => ({ label: mapKind[key], value: key }))
+const kinds = Object.keys(mapKind).map((key) => ({label: mapKind[key], value: key}))
 
 class AddActivityForm extends React.Component<WithStyles<'container' | 'textField' | 'menu' | 'short' | 'expansionPanel' | 'expansionPanelSummary' | 'moreOptions' | 'expansionPanelDetails'>> {
     public state = {
         title: undefined,
-        startsAt: new Date(), // TODO
-        endsAt: undefined, // TODO
+        startsAt: new Date(2018, 8, 17, 10, 0, 0, 0),
+        endsAt: new Date(2018, 8, 17, 11, 0, 0, 0),
         kind: 'LECTURE',
         shortDescription: undefined,
         longDescription: undefined,
         internalComment: undefined,
         speakerName: undefined,
         speakerDescription: undefined,
-        inscriptionBeginsAt: undefined, // TODO
-        inscriptionEndsAt: undefined, // TODO
+        inscriptionBeginsAt: new Date(2018, 7, 20, 20, 0, 0, 0),
+        inscriptionEndsAt: new Date(2018, 8,16 , 23, 59, 59, 0),
         totalVacancies: undefined,
     }
 
@@ -80,8 +83,20 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
         })
     }
 
+    public handleChangeDate = (name: string) => (value: Date) => {
+        this.setState({
+            [name]: value,
+        })
+    }
+
+    public formatDate = (type: 'start' | 'end') => {
+        return type === 'start' ?
+            (date:Date) => `Início: ${date.toLocaleString('pt-BR').replace(' ', ' - ')}` :
+            (date:Date) => `Término: ${date.toLocaleString('pt-BR').replace(' ', ' - ')}`
+    }
+
     public render() {
-        const { classes } = this.props
+        const {classes} = this.props
         return (
             <form className={classes.container} noValidate={true} autoComplete='off'>
                 <Typography className={classes.moreOptions}>Informações básicas</Typography>
@@ -95,6 +110,44 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                     onChange={this.handleChange('title')}
                     margin='normal'
                 />
+                <div>
+                    <DateTimePicker
+                        placeholder={'Início do evento'}
+                        value={this.state.startsAt}
+                        ampm={false}
+                        className={classNames(classes.textField, classes.short)}
+                        timeIcon={<AccessTime/>}
+                        minDate={new Date(2018, 8, 17)}
+                        maxDate={new Date(2018, 8, 19)}
+                        dateRangeIcon={<DateRange/>}
+                        onChange={this.handleChangeDate('startsAt')}
+                        leftArrowIcon={<ChevronLeft/>}
+                        keyboardIcon={<Event/>}
+                        margin='normal'
+                        labelFunc={this.formatDate('start')}
+                        cancelLabel={'Cancelar'}
+                        rightArrowIcon={<ChevronRight/>}
+                    />
+                </div>
+                <div>
+                    <DateTimePicker
+                        placeholder={'Término do evento'}
+                        value={this.state.endsAt}
+                        className={classNames(classes.textField, classes.short)}
+                        ampm={false}
+                        minDate={new Date(2018, 8, 17)}
+                        maxDate={new Date(2018, 8, 19)}
+                        timeIcon={<AccessTime/>}
+                        dateRangeIcon={<DateRange/>}
+                        keyboardIcon={<Event/>}
+                        labelFunc={this.formatDate('end')}
+                        margin='normal'
+                        cancelLabel={'Cancelar'}
+                        onChange={this.handleChangeDate('endsAt')}
+                        leftArrowIcon={<ChevronLeft/>}
+                        rightArrowIcon={<ChevronRight/>}
+                    />
+                </div>
                 <TextField
                     id='kind'
                     select={true}
@@ -115,7 +168,7 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                         </MenuItem>
                     ))}
                 </TextField>
-                <Typography className={classes.moreOptions} style={{ marginTop: 48 }}>
+                <Typography className={classes.moreOptions} style={{marginTop: 48}}>
                     Informações complementares
                 </Typography>
                 <TextField
@@ -139,7 +192,7 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                     className={classNames(classes.textField, classes.short)}
                     margin='normal'
                 />
-                <Typography className={classes.moreOptions} style={{ marginTop: 48 }}>
+                <Typography className={classes.moreOptions} style={{marginTop: 48}}>
                     Dados do palestrante
                 </Typography>
                 <TextField
@@ -161,8 +214,39 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                     rows={2}
                     margin='normal'
                 />
+                <Typography className={classes.moreOptions} style={{ marginTop: 48}}>Data das inscrições</Typography>
+                <DateTimePicker
+                    placeholder={'Início das inscrições'}
+                    value={this.state.inscriptionBeginsAt}
+                    ampm={false}
+                    className={classNames(classes.textField, classes.short)}
+                    timeIcon={<AccessTime/>}
+                    dateRangeIcon={<DateRange/>}
+                    onChange={this.handleChangeDate('inscriptionBeginsAt')}
+                    leftArrowIcon={<ChevronLeft/>}
+                    keyboardIcon={<Event/>}
+                    margin='normal'
+                    labelFunc={this.formatDate('start')}
+                    cancelLabel={'Cancelar'}
+                    rightArrowIcon={<ChevronRight/>}
+                />
+                <DateTimePicker
+                    placeholder={'Término das inscrições'}
+                    value={this.state.inscriptionEndsAt}
+                    ampm={false}
+                    className={classNames(classes.textField, classes.short)}
+                    timeIcon={<AccessTime/>}
+                    dateRangeIcon={<DateRange/>}
+                    onChange={this.handleChangeDate('inscriptionEndsAt')}
+                    leftArrowIcon={<ChevronLeft/>}
+                    keyboardIcon={<Event/>}
+                    margin='normal'
+                    labelFunc={this.formatDate('end')}
+                    cancelLabel={'Cancelar'}
+                    rightArrowIcon={<ChevronRight/>}
+                />
                 <ExpansionPanel className={classes.expansionPanel}>
-                    <ExpansionPanelSummary className={classes.expansionPanelSummary} expandIcon={<ExpandMoreIcon />}>
+                    <ExpansionPanelSummary className={classes.expansionPanelSummary} expandIcon={<ExpandMoreIcon/>}>
                         <Typography className={classes.moreOptions}>Mais opções</Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails className={classes.expansionPanelDetails}>

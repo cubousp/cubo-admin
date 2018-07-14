@@ -1,4 +1,5 @@
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
+import * as ptBr from 'date-fns/locale/pt'
 import DateFnsUtils from 'material-ui-pickers/utils/date-fns-utils'
 import MuiPickersUtilsProvider from 'material-ui-pickers/utils/MuiPickersUtilsProvider'
 import * as React from 'react'
@@ -16,7 +17,7 @@ class App extends React.Component {
           <Provider store={store}>
               <ApolloProvider client={client}>
                   <MuiThemeProvider theme={theme}>
-                      <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                      <MuiPickersUtilsProvider utils={DateFnsUtils} locale={ptBr}>
                         <AppRouter/>
                       </MuiPickersUtilsProvider>
                   </MuiThemeProvider>
