@@ -158,6 +158,15 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                     Informações complementares
                 </Typography>
                 <TextField
+                    id='location'
+                    label='Local da atividade'
+                    value={newActivity.location}
+                    onChange={handleChange('location')}
+                    helperText={'Coloque aqui o local da atividade. Ex: "Sala Laranja" '}
+                    className={classes.textField}
+                    margin='normal'
+                />
+                <TextField
                     id='shortDescription'
                     label='Resumo da atividade'
                     multiline={true}

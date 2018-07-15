@@ -45,7 +45,8 @@ const newActivity = {
     inscriptionBeginsAt: new Date(2018, 7, 20, 20, 0, 0, 0),
     inscriptionEndsAt: new Date(2018, 8,16 , 23, 59, 59, 0),
     totalVacancies: undefined,
-    visibleForParticipants: true
+    visibleForParticipants: true,
+    location: undefined,
 }
 
 class AddActivity extends React.Component<IProps & WithStyles<'appBar' | 'flex'>> {

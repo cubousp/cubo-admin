@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8255f5f-3be1-443c-a590-76f8e1ccd180" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/AddActivity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/AddActivity.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scenes/Activities/AddActivityForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/AddActivityForm.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -53,8 +51,8 @@
           <file leaf-file-name="AddActivity.tsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/scenes/Activities/AddActivity.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="492">
-                  <caret line="81" column="13" lean-forward="true" selection-start-line="74" selection-start-column="11" selection-end-line="81" selection-end-column="13" />
+                <state relative-caret-position="289">
+                  <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
                 </state>
               </provider>
             </entry>
@@ -97,8 +95,8 @@
           <file leaf-file-name="AddActivityForm.tsx" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/scenes/Activities/AddActivityForm.tsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="173">
-                  <caret line="244" column="32" lean-forward="true" selection-start-line="244" selection-start-column="32" selection-end-line="244" selection-end-column="32" />
+                <state relative-caret-position="259">
+                  <caret line="164" column="50" selection-start-line="164" selection-start-column="50" selection-end-line="164" selection-end-column="50" />
                   <folding>
                     <element signature="e#0#58#0" expanded="true" />
                     <element signature="e#844#1577#0" />
@@ -204,8 +202,8 @@
         <option value="$PROJECT_DIR$/tslint.json" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/Activities.tsx" />
-        <option value="$PROJECT_DIR$/src/scenes/Activities/AddActivityForm.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/AddActivity.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/AddActivityForm.tsx" />
       </list>
     </option>
   </component>
@@ -298,15 +296,16 @@
       <workItem from="1531022073243" duration="20737000" />
       <workItem from="1531564973951" duration="22916000" />
       <workItem from="1531675685719" duration="9865000" />
-      <workItem from="1531689004550" duration="1345000" />
+      <workItem from="1531689004550" duration="1625000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192237000" />
+    <option name="totallyTimeSpent" value="192517000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -706,15 +705,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Activities/AddActivity.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="81" column="13" lean-forward="true" selection-start-line="74" selection-start-column="11" selection-end-line="81" selection-end-column="13" />
+        <state relative-caret-position="289">
+          <caret line="77" column="31" lean-forward="true" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Activities/AddActivityForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="244" column="32" lean-forward="true" selection-start-line="244" selection-start-column="32" selection-end-line="244" selection-end-column="32" />
+        <state relative-caret-position="259">
+          <caret line="164" column="50" selection-start-line="164" selection-start-column="50" selection-end-line="164" selection-end-column="50" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
             <element signature="e#844#1577#0" />
