@@ -45,6 +45,7 @@ const newActivity = {
     inscriptionBeginsAt: new Date(2018, 7, 20, 20, 0, 0, 0),
     inscriptionEndsAt: new Date(2018, 8,16 , 23, 59, 59, 0),
     totalVacancies: undefined,
+    visibleForParticipants: true
 }
 
 class AddActivity extends React.Component<IProps & WithStyles<'appBar' | 'flex'>> {
@@ -66,6 +67,15 @@ class AddActivity extends React.Component<IProps & WithStyles<'appBar' | 'flex'>
             newActivity: {
                 ...this.state.newActivity,
                 [name]: value,
+            }
+        })
+    }
+
+    public handleCheckedChange = (name: string) => (event: any) => {
+        this.setState({
+            newActivity: {
+                ...this.state.newActivity,
+                [name]: event.target.checked
             }
         })
     }
@@ -118,6 +128,7 @@ class AddActivity extends React.Component<IProps & WithStyles<'appBar' | 'flex'>
                     showError={this.state.showError}
                     handleChange={this.handleChange}
                     handleChangeDate={this.handleChangeDate}
+                    handleCheckedChange={this.handleCheckedChange}
                     newActivity={this.state.newActivity}
                     validState={this.state.newActivity.title !== undefined && this.state.newActivity.title.trim().length !== 0}
                 />

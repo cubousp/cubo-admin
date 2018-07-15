@@ -1,6 +1,8 @@
+import Checkbox from '@material-ui/core/Checkbox/Checkbox'
 import ExpansionPanel from '@material-ui/core/ExpansionPanel/ExpansionPanel'
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails/ExpansionPanelDetails'
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary/ExpansionPanelSummary'
+import FormControlLabel from '@material-ui/core/FormControlLabel/FormControlLabel'
 import MenuItem from '@material-ui/core/MenuItem/MenuItem'
 import { Theme, WithStyles, withStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField/TextField'
@@ -64,6 +66,7 @@ const kinds = Object.keys(mapKind).map((key) => ({label: mapKind[key], value: ke
 interface IProps {
     showError: boolean
     handleChange: (name: string) => (event: any) => void
+    handleCheckedChange: (name: string) => (event: any) => void
     handleChangeDate: (name: string) => (value: Date) => void
     newActivity: any
     validState: boolean
@@ -77,7 +80,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
     }
 
     public render() {
-        const { classes, showError, handleChange, handleChangeDate, newActivity, validState } = this.props
+        const { classes, showError, handleChange, handleChangeDate, handleCheckedChange, newActivity, validState } = this.props
         return (
             <form className={classes.container} noValidate={true} autoComplete='off'>
                 <Typography className={classes.moreOptions}>Informações básicas</Typography>
@@ -233,6 +236,17 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                         <Typography className={classes.moreOptions}>Mais opções</Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+                        <FormControlLabel
+                            style={{ marginTop: 32, paddingLeft: 8 }}
+                            control={
+                                <Checkbox
+                                    checked={newActivity.visibleForParticipants}
+                                    onChange={handleCheckedChange('visibleForParticipants')}
+                                    color={'primary'}
+                                />
+                            }
+                            label={'Visível para os participantes'}
+                        />
                         <TextField
                             id='longDescription'
                             label='Observações para os participantes'
