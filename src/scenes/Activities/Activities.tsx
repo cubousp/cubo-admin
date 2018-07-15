@@ -2,15 +2,20 @@ import Button from '@material-ui/core/Button/Button'
 import CircularProgress from '@material-ui/core/CircularProgress/CircularProgress'
 import AddIcon from '@material-ui/icons/Add'
 import * as React from 'react'
+import Mutation from 'react-apollo/Mutation'
 import Query from 'react-apollo/Query'
-import { getActivities } from '../../repositories/activities'
+import Snackbar from '../../components/Snackbar'
+import { CREATE_ACTIVITY, GET_ACTIVITIES } from '../../repositories/activities'
 import ActivitiesList from './ActivitiesList'
 import AddActivity from './AddActivity'
 
 class Activities extends React.Component {
     public state = {
         openAddActivityDialog: false,
-        showError: false
+        showError: false,
+        resetForm: false,
+        savingActivity: false,
+        openSnackbar: false,
     }
 
     constructor(props: any) {
@@ -31,10 +36,48 @@ class Activities extends React.Component {
         })
     }
 
-    public handleSaveNewActivity = (newActivity: any) => {
-        console.log('new activity', newActivity)
+    public handleSaveNewActivity = async(createActivity: any, newActivity: any) => {
+        try {
+            this.setState({
+                savingActivity: true
+            })
+            await createActivity({ variables: { newActivity: this.mapToInput(newActivity) } })
+            this.setState({
+                openAddActivityDialog: false,
+                resetForm: true,
+                openSnackbar: true,
+            })
+        } catch (err) {
+            console.log('err', err)
+        }
         this.setState({
-            openAddActivityDialog: false
+            savingActivity: false
+        })
+    }
+
+    public handleResetForm = () => {
+        this.setState({
+            resetForm: false
+        })
+    }
+
+    public mapToInput = (newActivity) => ({
+        ...newActivity,
+        speakerName: undefined,
+        speakerDescription: undefined,
+        speaker: newActivity.speakerName ? {
+            name: newActivity.speakerName,
+            description: newActivity.speakerDescription
+        } : undefined,
+        startsAt: newActivity.startsAt.toISOString(),
+        endsAt: newActivity.endsAt.toISOString(),
+        inscriptionBeginsAt: newActivity.inscriptionBeginsAt && newActivity.inscriptionBeginsAt.toISOString(),
+        inscriptionEndsAt: newActivity.inscriptionEndsAt && newActivity.inscriptionEndsAt.toISOString()
+    })
+
+    public handleCloseSnackbar = () => {
+        this.setState({
+            openSnackbar: false
         })
     }
 
@@ -42,7 +85,7 @@ class Activities extends React.Component {
         return (
             <div style={{ backgroundColor: '#fff', minHeight: 'calc(100vh - 64px)', margin: -24 }}>
                 <Query
-                    query={getActivities}
+                    query={GET_ACTIVITIES}
                     pollInterval={500}
                 >
                     {({loading, error, data}) => {
@@ -64,11 +107,26 @@ class Activities extends React.Component {
                         )
                     }}
                 </Query>
-                <AddActivity
-                    open={this.state.openAddActivityDialog}
-                    handleClose={this.handleCloseAddDialog}
-                    handleSave={this.handleSaveNewActivity}
-                />
+                <Mutation mutation={CREATE_ACTIVITY}>
+                    {(createActivity) => (
+                        <div>
+                            <AddActivity
+                                open={this.state.openAddActivityDialog}
+                                handleClose={this.handleCloseAddDialog}
+                                handleSave={(newActivity) => this.handleSaveNewActivity(createActivity, newActivity)}
+                                handleResetForm={this.handleResetForm}
+                                resetForm={this.state.resetForm}
+                                savingActivity={this.state.savingActivity}
+                            />
+                            <Snackbar
+                                open={this.state.openSnackbar}
+                                onClose={this.handleCloseSnackbar}
+                                message={'Atividade criada com sucesso'}
+                                variant={'success'}
+                            />
+                        </div>
+                    )}
+                </Mutation>
             </div>
         )
     }

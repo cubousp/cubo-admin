@@ -23,29 +23,33 @@ interface IProps {
     handleClose: () => void
     handleSave: (newActivity: any) => void
     open: boolean
+    savingActivity: boolean
+    resetForm: boolean
+    handleResetForm: () => void
 }
 
 const Transition = (props: any) => {
     return <Slide direction='up' {...props} />
 }
 
+const newActivity = {
+    title: '',
+    startsAt: new Date(2018, 8, 17, 10, 0, 0, 0),
+    endsAt: new Date(2018, 8, 17, 11, 0, 0, 0),
+    kind: 'LECTURE',
+    shortDescription: undefined,
+    longDescription: undefined,
+    internalComment: undefined,
+    speakerName: undefined,
+    speakerDescription: undefined,
+    inscriptionBeginsAt: new Date(2018, 7, 20, 20, 0, 0, 0),
+    inscriptionEndsAt: new Date(2018, 8,16 , 23, 59, 59, 0),
+    totalVacancies: undefined,
+}
+
 class AddActivity extends React.Component<IProps & WithStyles<'appBar' | 'flex'>> {
     public state = {
-        newActivity: {
-            title: '',
-            startsAt: new Date(2018, 8, 17, 10, 0, 0, 0),
-            endsAt: new Date(2018, 8, 17, 11, 0, 0, 0),
-            kind: 'LECTURE',
-            shortDescription: undefined,
-            longDescription: undefined,
-            internalComment: undefined,
-            speakerName: undefined,
-            speakerDescription: undefined,
-            inscriptionBeginsAt: new Date(2018, 7, 20, 20, 0, 0, 0),
-            inscriptionEndsAt: new Date(2018, 8,16 , 23, 59, 59, 0),
-            totalVacancies: undefined,
-        },
-        showError: false
+        newActivity, showError: false
     }
 
     public handleChange = (name: string) => (event: any) => {
@@ -77,24 +81,35 @@ class AddActivity extends React.Component<IProps & WithStyles<'appBar' | 'flex'>
         this.props.handleSave(this.state.newActivity)
     }
 
+    public onClose = () => {
+        this.setState({
+            showError: false
+        })
+        this.props.handleClose()
+    }
+
     public render() {
-        const { classes, handleClose, open } = this.props
+        const { classes, open, savingActivity } = this.props
         return (
             <Dialog
                 fullScreen={true}
                 open={open}
-                onClose={handleClose}
+                onClose={this.onClose}
                 TransitionComponent={Transition}
             >
                 <AppBar className={classes.appBar}>
                     <Toolbar>
-                        <IconButton color='inherit' onClick={handleClose} aria-label='Close'>
+                        <IconButton color='inherit' onClick={this.onClose} aria-label='Close'>
                             <CloseIcon />
                         </IconButton>
                         <Typography variant='title' color='inherit' className={classes.flex}>
                             Nova atividade
                         </Typography>
-                        <Button color='inherit' onClick={this.validateAndSave}>
+                        <Button
+                            color='inherit'
+                            onClick={this.validateAndSave}
+                            disabled={savingActivity}
+                        >
                             Salvar
                         </Button>
                     </Toolbar>
@@ -108,6 +123,21 @@ class AddActivity extends React.Component<IProps & WithStyles<'appBar' | 'flex'>
                 />
             </Dialog>
         )
+    }
+
+    public componentDidMount() {
+        this.listenForFormReset()
+    }
+
+    public listenForFormReset = () => {
+         setInterval(() => {
+             if (this.props.resetForm) {
+                 this.setState({
+                     newActivity
+                 })
+                 this.props.handleResetForm()
+             }
+         }, 100)
     }
 }
 

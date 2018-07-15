@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-export const getActivities = gql`
+export const GET_ACTIVITIES = gql`
     query Activities {
         eventSchedule {
             id
@@ -8,6 +8,14 @@ export const getActivities = gql`
             startsAt
             endsAt
             kind
+        }
+    }
+`
+
+export const CREATE_ACTIVITY = gql`
+    mutation createActivity($newActivity: CreateActivityInput!) {
+        createActivity(input: $newActivity) {
+            id
         }
     }
 `
