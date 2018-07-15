@@ -61,66 +61,48 @@ const mapKind = {
 
 const kinds = Object.keys(mapKind).map((key) => ({label: mapKind[key], value: key}))
 
-class AddActivityForm extends React.Component<WithStyles<'container' | 'textField' | 'menu' | 'short' | 'expansionPanel' | 'expansionPanelSummary' | 'moreOptions' | 'expansionPanelDetails'>> {
-    public state = {
-        title: undefined,
-        startsAt: new Date(2018, 8, 17, 10, 0, 0, 0),
-        endsAt: new Date(2018, 8, 17, 11, 0, 0, 0),
-        kind: 'LECTURE',
-        shortDescription: undefined,
-        longDescription: undefined,
-        internalComment: undefined,
-        speakerName: undefined,
-        speakerDescription: undefined,
-        inscriptionBeginsAt: new Date(2018, 7, 20, 20, 0, 0, 0),
-        inscriptionEndsAt: new Date(2018, 8,16 , 23, 59, 59, 0),
-        totalVacancies: undefined,
-    }
+interface IProps {
+    showError: boolean
+    handleChange: (name: string) => (event: any) => void
+    handleChangeDate: (name: string) => (value: Date) => void
+    newActivity: any
+    validState: boolean
+}
 
-    public handleChange = (name: string) => (event: any) => {
-        this.setState({
-            [name]: event.target.value,
-        })
-    }
-
-    public handleChangeDate = (name: string) => (value: Date) => {
-        this.setState({
-            [name]: value,
-        })
-    }
-
+class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 'textField' | 'menu' | 'short' | 'expansionPanel' | 'expansionPanelSummary' | 'moreOptions' | 'expansionPanelDetails'>> {
     public formatDate = (type: 'start' | 'end') => {
         return type === 'start' ?
-            (date:Date) => `Início: ${date.toLocaleString('pt-BR').replace(' ', ' - ')}` :
-            (date:Date) => `Término: ${date.toLocaleString('pt-BR').replace(' ', ' - ')}`
+            (date:Date) => `Início*: ${date.toLocaleString('pt-BR').replace(' ', ' - ')}` :
+            (date:Date) => `Término*: ${date.toLocaleString('pt-BR').replace(' ', ' - ')}`
     }
 
     public render() {
-        const {classes} = this.props
+        const { classes, showError, handleChange, handleChangeDate, newActivity, validState } = this.props
         return (
             <form className={classes.container} noValidate={true} autoComplete='off'>
                 <Typography className={classes.moreOptions}>Informações básicas</Typography>
                 <TextField
                     id='title'
-                    label='Tĩtulo'
+                    label='Título'
+                    error={showError && !validState }
                     required={true}
                     helperText={'Ex: Atuação do cirurgião-dentista militar nas Forças Armadas – Força Aérea: expectativas, realidades e dificuldades'}
                     className={classes.textField}
-                    value={this.state.title}
-                    onChange={this.handleChange('title')}
+                    value={newActivity.title}
+                    onChange={handleChange('title')}
                     margin='normal'
                 />
                 <div>
                     <DateTimePicker
                         placeholder={'Início do evento'}
-                        value={this.state.startsAt}
+                        value={newActivity.startsAt}
                         ampm={false}
                         className={classNames(classes.textField, classes.short)}
                         timeIcon={<AccessTime/>}
                         minDate={new Date(2018, 8, 17)}
-                        maxDate={new Date(2018, 8, 19)}
+                        maxDate={new Date(2018, 8, 19, 23, 59, 59)}
                         dateRangeIcon={<DateRange/>}
-                        onChange={this.handleChangeDate('startsAt')}
+                        onChange={handleChangeDate('startsAt')}
                         leftArrowIcon={<ChevronLeft/>}
                         keyboardIcon={<Event/>}
                         margin='normal'
@@ -132,18 +114,18 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                 <div>
                     <DateTimePicker
                         placeholder={'Término do evento'}
-                        value={this.state.endsAt}
+                        value={newActivity.endsAt}
                         className={classNames(classes.textField, classes.short)}
                         ampm={false}
                         minDate={new Date(2018, 8, 17)}
-                        maxDate={new Date(2018, 8, 19)}
+                        maxDate={new Date(2018, 8, 19, 23, 59, 59)}
                         timeIcon={<AccessTime/>}
                         dateRangeIcon={<DateRange/>}
                         keyboardIcon={<Event/>}
                         labelFunc={this.formatDate('end')}
                         margin='normal'
                         cancelLabel={'Cancelar'}
-                        onChange={this.handleChangeDate('endsAt')}
+                        onChange={handleChangeDate('endsAt')}
                         leftArrowIcon={<ChevronLeft/>}
                         rightArrowIcon={<ChevronRight/>}
                     />
@@ -151,15 +133,16 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                 <TextField
                     id='kind'
                     select={true}
+                    required={true}
                     className={classNames(classes.textField, classes.short)}
-                    value={this.state.kind}
-                    onChange={this.handleChange('kind')}
+                    value={newActivity.kind}
+                    onChange={handleChange('kind')}
                     SelectProps={{
                         MenuProps: {
                             className: classes.menu,
                         },
                     }}
-                    helperText='Selecione o tipo de atividade'
+                    helperText='Selecione o tipo de atividade*'
                     margin='normal'
                 >
                     {kinds.map(option => (
@@ -177,8 +160,8 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                     multiline={true}
                     rowsMax='3'
                     rows={3}
-                    value={this.state.shortDescription}
-                    onChange={this.handleChange('shortDescription')}
+                    value={newActivity.shortDescription}
+                    onChange={handleChange('shortDescription')}
                     helperText={'Coloque aqui um breve resumo do conteúdo da atividade. Isso a tornará mais atrativa para os participantes.'}
                     className={classes.textField}
                     margin='normal'
@@ -187,8 +170,8 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                     id='totalVacancies'
                     label='Número de vagas'
                     type='number'
-                    value={this.state.totalVacancies}
-                    onChange={this.handleChange('totalVacancies')}
+                    value={newActivity.totalVacancies}
+                    onChange={handleChange('totalVacancies')}
                     className={classNames(classes.textField, classes.short)}
                     margin='normal'
                 />
@@ -198,16 +181,16 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                 <TextField
                     id='speakerName'
                     label='Nome'
-                    value={this.state.speakerName}
-                    onChange={this.handleChange('speakerName')}
+                    value={newActivity.speakerName}
+                    onChange={handleChange('speakerName')}
                     className={classNames(classes.textField, classes.short)}
                     margin='normal'
                 />
                 <TextField
                     id='speakerDescription'
                     label='Descrição'
-                    value={this.state.speakerDescription}
-                    onChange={this.handleChange('speakerDescription')}
+                    value={newActivity.speakerDescription}
+                    onChange={handleChange('speakerDescription')}
                     className={classes.textField}
                     multiline={true}
                     rowsMax='2'
@@ -217,12 +200,12 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                 <Typography className={classes.moreOptions} style={{ marginTop: 48}}>Data das inscrições</Typography>
                 <DateTimePicker
                     placeholder={'Início das inscrições'}
-                    value={this.state.inscriptionBeginsAt}
+                    value={newActivity.inscriptionBeginsAt}
                     ampm={false}
                     className={classNames(classes.textField, classes.short)}
                     timeIcon={<AccessTime/>}
                     dateRangeIcon={<DateRange/>}
-                    onChange={this.handleChangeDate('inscriptionBeginsAt')}
+                    onChange={handleChangeDate('inscriptionBeginsAt')}
                     leftArrowIcon={<ChevronLeft/>}
                     keyboardIcon={<Event/>}
                     margin='normal'
@@ -232,12 +215,12 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                 />
                 <DateTimePicker
                     placeholder={'Término das inscrições'}
-                    value={this.state.inscriptionEndsAt}
+                    value={newActivity.inscriptionEndsAt}
                     ampm={false}
                     className={classNames(classes.textField, classes.short)}
                     timeIcon={<AccessTime/>}
                     dateRangeIcon={<DateRange/>}
-                    onChange={this.handleChangeDate('inscriptionEndsAt')}
+                    onChange={handleChangeDate('inscriptionEndsAt')}
                     leftArrowIcon={<ChevronLeft/>}
                     keyboardIcon={<Event/>}
                     margin='normal'
@@ -256,8 +239,8 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                             multiline={true}
                             rowsMax='3'
                             rows={3}
-                            value={this.state.longDescription}
-                            onChange={this.handleChange('longDescription')}
+                            value={newActivity.longDescription}
+                            onChange={handleChange('longDescription')}
                             helperText={'Você pode incluir observações e instruções para os participantes, ex: Trazer seu próprio kit clínico'}
                             className={classes.textField}
                             margin='normal'
@@ -267,8 +250,8 @@ class AddActivityForm extends React.Component<WithStyles<'container' | 'textFiel
                             label='Comentários internos'
                             multiline={true}
                             rows={5}
-                            value={this.state.internalComment}
-                            onChange={this.handleChange('internalComment')}
+                            value={newActivity.internalComment}
+                            onChange={handleChange('internalComment')}
                             helperText={'Comentários internos para a organização. Esse campo não será visível para os participantes. Ex: "Lembrar de trazer os brindes para a sala meia hora antes"'}
                             className={classes.textField}
                             margin='normal'

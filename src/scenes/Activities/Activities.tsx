@@ -9,7 +9,8 @@ import AddActivity from './AddActivity'
 
 class Activities extends React.Component {
     public state = {
-        openAddActivityDialog: true
+        openAddActivityDialog: false,
+        showError: false
     }
 
     constructor(props: any) {
@@ -25,6 +26,13 @@ class Activities extends React.Component {
     }
 
     public handleCloseAddDialog = () => {
+        this.setState({
+            openAddActivityDialog: false
+        })
+    }
+
+    public handleSaveNewActivity = (newActivity: any) => {
+        console.log('new activity', newActivity)
         this.setState({
             openAddActivityDialog: false
         })
@@ -48,8 +56,9 @@ class Activities extends React.Component {
                                     color='secondary'
                                     aria-label='add'
                                     style={{ position: 'absolute', bottom: 64, right: 64 }}
+                                    onClick={this.handleAddClick}
                                 >
-                                    <AddIcon onClick={this.handleAddClick} />
+                                    <AddIcon/>
                                 </Button>
                             </div>
                         )
@@ -58,6 +67,7 @@ class Activities extends React.Component {
                 <AddActivity
                     open={this.state.openAddActivityDialog}
                     handleClose={this.handleCloseAddDialog}
+                    handleSave={this.handleSaveNewActivity}
                 />
             </div>
         )
