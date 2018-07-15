@@ -154,92 +154,106 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                         </MenuItem>
                     ))}
                 </TextField>
-                <Typography className={classes.moreOptions} style={{marginTop: 48}}>
-                    Informações complementares
-                </Typography>
-                <TextField
-                    id='location'
-                    label='Local da atividade'
-                    value={newActivity.location}
-                    onChange={handleChange('location')}
-                    helperText={'Coloque aqui o local da atividade. Ex: "Sala Laranja" '}
-                    className={classes.textField}
-                    margin='normal'
-                />
-                <TextField
-                    id='shortDescription'
-                    label='Resumo da atividade'
-                    multiline={true}
-                    rowsMax='3'
-                    rows={3}
-                    value={newActivity.shortDescription}
-                    onChange={handleChange('shortDescription')}
-                    helperText={'Coloque aqui um breve resumo do conteúdo da atividade. Isso a tornará mais atrativa para os participantes.'}
-                    className={classes.textField}
-                    margin='normal'
-                />
-                <TextField
-                    id='totalVacancies'
-                    label='Número de vagas'
-                    type='number'
-                    value={newActivity.totalVacancies}
-                    onChange={handleChange('totalVacancies')}
-                    className={classNames(classes.textField, classes.short)}
-                    margin='normal'
-                />
-                <Typography className={classes.moreOptions} style={{marginTop: 48}}>
-                    Dados do palestrante
-                </Typography>
-                <TextField
-                    id='speakerName'
-                    label='Nome'
-                    value={newActivity.speakerName}
-                    onChange={handleChange('speakerName')}
-                    className={classNames(classes.textField, classes.short)}
-                    margin='normal'
-                />
-                <TextField
-                    id='speakerDescription'
-                    label='Descrição'
-                    value={newActivity.speakerDescription}
-                    onChange={handleChange('speakerDescription')}
-                    className={classes.textField}
-                    multiline={true}
-                    rowsMax='2'
-                    rows={2}
-                    margin='normal'
-                />
-                <Typography className={classes.moreOptions} style={{ marginTop: 48}}>Data das inscrições</Typography>
-                <DateTimePicker
-                    placeholder={'Início das inscrições'}
-                    value={newActivity.inscriptionBeginsAt}
-                    ampm={false}
-                    className={classNames(classes.textField, classes.short)}
-                    timeIcon={<AccessTime/>}
-                    dateRangeIcon={<DateRange/>}
-                    onChange={handleChangeDate('inscriptionBeginsAt')}
-                    leftArrowIcon={<ChevronLeft/>}
-                    keyboardIcon={<Event/>}
-                    margin='normal'
-                    labelFunc={this.formatDate('start')}
-                    cancelLabel={'Cancelar'}
-                    rightArrowIcon={<ChevronRight/>}
-                />
-                <DateTimePicker
-                    placeholder={'Término das inscrições'}
-                    value={newActivity.inscriptionEndsAt}
-                    ampm={false}
-                    className={classNames(classes.textField, classes.short)}
-                    timeIcon={<AccessTime/>}
-                    dateRangeIcon={<DateRange/>}
-                    onChange={handleChangeDate('inscriptionEndsAt')}
-                    leftArrowIcon={<ChevronLeft/>}
-                    keyboardIcon={<Event/>}
-                    margin='normal'
-                    labelFunc={this.formatDate('end')}
-                    cancelLabel={'Cancelar'}
-                    rightArrowIcon={<ChevronRight/>}
-                />
+                <ExpansionPanel className={classes.expansionPanel}>
+                    <ExpansionPanelSummary className={classes.expansionPanelSummary} style={{ width: 276 }} expandIcon={<ExpandMoreIcon/>}>
+                        <Typography className={classes.moreOptions}>Informações complementares</Typography>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+                        <TextField
+                            id='location'
+                            label='Local da atividade'
+                            value={newActivity.location}
+                            onChange={handleChange('location')}
+                            helperText={'Coloque aqui o local da atividade. Ex: "Sala Laranja" '}
+                            className={classes.textField}
+                            margin='normal'
+                        />
+                        <TextField
+                            id='shortDescription'
+                            label='Resumo da atividade'
+                            multiline={true}
+                            rowsMax='3'
+                            rows={3}
+                            value={newActivity.shortDescription}
+                            onChange={handleChange('shortDescription')}
+                            helperText={'Coloque aqui um breve resumo do conteúdo da atividade. Isso a tornará mais atrativa para os participantes.'}
+                            className={classes.textField}
+                            margin='normal'
+                        />
+                        <TextField
+                            id='totalVacancies'
+                            label='Número de vagas'
+                            type='number'
+                            value={newActivity.totalVacancies}
+                            onChange={handleChange('totalVacancies')}
+                            className={classNames(classes.textField, classes.short)}
+                            margin='normal'
+                        />
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
+                <ExpansionPanel className={classes.expansionPanel}>
+                    <ExpansionPanelSummary className={classes.expansionPanelSummary} style={{ width: 212}} expandIcon={<ExpandMoreIcon/>}>
+                        <Typography className={classes.moreOptions}>Dados do palestrante</Typography>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+                        <TextField
+                            id='speakerName'
+                            label='Nome'
+                            value={newActivity.speakerName}
+                            onChange={handleChange('speakerName')}
+                            className={classNames(classes.textField, classes.short)}
+                            margin='normal'
+                        />
+                        <TextField
+                            id='speakerDescription'
+                            label='Descrição'
+                            value={newActivity.speakerDescription}
+                            onChange={handleChange('speakerDescription')}
+                            className={classes.textField}
+                            multiline={true}
+                            rowsMax='2'
+                            rows={2}
+                            margin='normal'
+                        />
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
+                <ExpansionPanel className={classes.expansionPanel}>
+                    <ExpansionPanelSummary className={classes.expansionPanelSummary} style={{ width: 200}} expandIcon={<ExpandMoreIcon/>}>
+                        <Typography className={classes.moreOptions}>Data das inscrições</Typography>
+                    </ExpansionPanelSummary>
+                    <ExpansionPanelDetails className={classes.expansionPanelDetails}>
+                        <DateTimePicker
+                            placeholder={'Início das inscrições'}
+                            value={newActivity.inscriptionBeginsAt}
+                            ampm={false}
+                            className={classNames(classes.textField, classes.short)}
+                            timeIcon={<AccessTime/>}
+                            dateRangeIcon={<DateRange/>}
+                            onChange={handleChangeDate('inscriptionBeginsAt')}
+                            leftArrowIcon={<ChevronLeft/>}
+                            keyboardIcon={<Event/>}
+                            margin='normal'
+                            labelFunc={this.formatDate('start')}
+                            cancelLabel={'Cancelar'}
+                            rightArrowIcon={<ChevronRight/>}
+                        />
+                        <DateTimePicker
+                            placeholder={'Término das inscrições'}
+                            value={newActivity.inscriptionEndsAt}
+                            ampm={false}
+                            className={classNames(classes.textField, classes.short)}
+                            timeIcon={<AccessTime/>}
+                            dateRangeIcon={<DateRange/>}
+                            onChange={handleChangeDate('inscriptionEndsAt')}
+                            leftArrowIcon={<ChevronLeft/>}
+                            keyboardIcon={<Event/>}
+                            margin='normal'
+                            labelFunc={this.formatDate('end')}
+                            cancelLabel={'Cancelar'}
+                            rightArrowIcon={<ChevronRight/>}
+                        />
+                    </ExpansionPanelDetails>
+                </ExpansionPanel>
                 <ExpansionPanel className={classes.expansionPanel}>
                     <ExpansionPanelSummary className={classes.expansionPanelSummary} expandIcon={<ExpandMoreIcon/>}>
                         <Typography className={classes.moreOptions}>Mais opções</Typography>
