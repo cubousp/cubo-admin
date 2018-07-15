@@ -1,29 +1,22 @@
 /* tslint:disable jsx-no-lambda */
-import { ConnectedRouter } from 'connected-react-router'
 import { createBrowserHistory } from 'history'
 import * as React from 'react'
-import { connect } from 'react-redux'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import {BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import Activities from '../scenes/Activities/Activities'
 import Analytics from '../scenes/Analytics/Anlytics'
 import FeedContainer from '../scenes/Feed/FeedContainer'
 import LoginContainer from '../scenes/Login/LoginContainer'
 import Participants from '../scenes/Participants/Participants'
+import { isAuthenticated } from '../services/auth'
 import AppShell from './AppShell'
-import { IState } from './state'
 
 export const history = createBrowserHistory()
 
-const PrivateRoute = connect(
-    ({ currentUser }: IState, ownProps: any) => ({
-        isAuthenticated: currentUser !== undefined,
-        ...ownProps
-    })
-)(({ component: Component, isAuthenticated, ...rest }: any) => (
+const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route
         {...rest}
         render={props =>
-            isAuthenticated ? (
+            isAuthenticated() ? (
                 <Component {...props} />
             ) : (
                 <Redirect
@@ -35,10 +28,10 @@ const PrivateRoute = connect(
             )
         }
     />
-))
+)
 
 const AppRouter = () => (
-    <ConnectedRouter history={history}>
+    <Router>
         <Switch>
             <Route path='/login' component={LoginContainer} />
             <AppShell>
@@ -49,6 +42,6 @@ const AppRouter = () => (
                 <PrivateRoute exact={true} path='/participants' component={Participants} />
             </AppShell>
         </Switch>
-    </ConnectedRouter>
+    </Router>
 )
 export default AppRouter

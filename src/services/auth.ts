@@ -22,5 +22,7 @@ export const signIn = (email: string, password: string) => gql`
 export const logout = () => {
     localStorage.removeItem('token')
     localStorage.removeItem('currentUser')
-    window.open('/login')
+    window.location.replace('/login')
 }
+
+export const isAuthenticated = () => localStorage.getItem('token') !== undefined
