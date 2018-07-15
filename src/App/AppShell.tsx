@@ -38,7 +38,7 @@ const AppShell = decorate(
                     <AppBar
                         open={this.state.open}
                         onMenuClick={this.handleDrawerOpen}
-                        title={pagesTitle[(this.props as any).location.pathname] || ''}
+                        title={this.getTitleFromLocation()}
                     />
                     <AppDrawer
                         open={this.state.open}
@@ -49,6 +49,13 @@ const AppShell = decorate(
                     </AppContent>
                 </div>
             )
+        }
+
+        private getTitleFromLocation() {
+            const found = pagesTitle.find((pageTitle) => {
+                return (this.props as any).location.pathname.match(pageTitle.pattern) !== null
+            })
+            return found ? found.title : ''
         }
     }
 )
