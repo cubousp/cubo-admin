@@ -14,6 +14,7 @@ import withWidth from '@material-ui/core/withWidth/withWidth'
 import { Email, Visibility, VisibilityOff } from '@material-ui/icons'
 import * as classNames from 'classnames'
 import * as React from 'react'
+import { Redirect } from 'react-router'
 import { compose } from 'recompose'
 
 const styles = (theme: Theme) => ({
@@ -67,6 +68,7 @@ interface ILoginProps {
     onLoginClick: (email: string, password: string) => Promise<void>
     loading: boolean,
     error: boolean,
+    redirectToDashboard: boolean
 }
 
 const Login = class extends React.Component<
@@ -96,7 +98,11 @@ const Login = class extends React.Component<
         public handleLogin = () => this.props.onLoginClick(this.state.email, this.state.password)
 
         public render() {
-            const { classes, width, loading, error } = this.props
+            const { classes, width, loading, error, redirectToDashboard } = this.props
+
+            if (redirectToDashboard) {
+                return <Redirect to={'/'}/>
+            }
 
             return (
                 <div className={classes.container}>

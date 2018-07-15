@@ -12,7 +12,8 @@ export interface IState {
     feedEditor?: any,
     storyId?: string
     openSnackbar: boolean,
-    snackbarMessage?: string
+    snackbarMessage?: string,
+    redirectToDashboard: boolean
 }
 
 export const initialState: IState = {
@@ -25,5 +26,6 @@ export const initialState: IState = {
     openFeedConfirmationDialog: false,
     openFeedDeleteConfirmationDialog: false,
     openSnackbar: false,
-    postingToFeed: false
+    postingToFeed: false,
+    redirectToDashboard: false
 }

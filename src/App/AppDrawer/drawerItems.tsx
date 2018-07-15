@@ -10,13 +10,13 @@ interface IDrawerItem {
 
 export const drawerItems: IDrawerItem[] = [
     {
-        icon: <RssFeed/>,
-        label: 'Feed',
-        link: '/feed'
-    }, {
         icon: <Dashboard/>,
         label: 'Atividades',
         link: '/activities'
+    }, {
+        icon: <RssFeed/>,
+        label: 'Feed',
+        link: '/feed'
     }, {
         disabled: true,
         icon: <People/>,

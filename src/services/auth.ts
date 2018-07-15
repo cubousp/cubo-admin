@@ -25,4 +25,6 @@ export const logout = () => {
     window.location.replace('/login')
 }
 
-export const isAuthenticated = () => localStorage.getItem('token') !== undefined
+export const isAuthenticated = () => {
+    return localStorage.getItem('token') !== null
+}

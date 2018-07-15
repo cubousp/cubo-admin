@@ -1,15 +1,18 @@
 import MaterialAppBar from '@material-ui/core/AppBar'
 import IconButton from '@material-ui/core/IconButton'
-import { withStyles } from '@material-ui/core/styles'
+import { Theme, WithStyles, withStyles } from '@material-ui/core/styles'
 import Toolbar from '@material-ui/core/Toolbar'
+import Tooltip from '@material-ui/core/Tooltip/Tooltip'
 import Typography from '@material-ui/core/Typography'
+import { ExitToApp } from '@material-ui/icons'
 import MenuIcon from '@material-ui/icons/Menu'
 import * as classNames from 'classnames'
 import * as React from 'react'
+import { logout } from '../services/auth'
 
 const drawerWidth = 240
 
-const decorate = withStyles(({ palette, spacing, transitions, zIndex, mixins }) => ({
+const styles = ({ palette, spacing, transitions, zIndex, mixins }: Theme) => ({
     appBar: {
         color: palette.getContrastText(palette.primary.dark),
         transition: transitions.create(['width', 'margin'], {
@@ -40,7 +43,7 @@ const decorate = withStyles(({ palette, spacing, transitions, zIndex, mixins }) 
         padding: '0 8px',
         ...mixins.toolbar,
     },
-}))
+})
 
 interface IProps {
     open: boolean
@@ -49,25 +52,46 @@ interface IProps {
     onMobile?: boolean
 }
 
-const AppBar = decorate<IProps>(({ classes, open, title, onMenuClick, onMobile }) => (
-    <MaterialAppBar
-        position='absolute'
-        className={classNames(classes.appBar, open && !onMobile && classes.appBarShift)}
-    >
-        <Toolbar disableGutters={!open}>
-            <IconButton
-                color='inherit'
-                aria-label='open drawer'
-                onClick={onMenuClick}
-                className={classNames(classes.menuButton, open && classes.hide)}
+class AppBar extends React.Component<IProps & WithStyles<'appBar' | 'appBarShift' | 'hide' | 'menuButton' | 'toolbar'>> {
+    public handleLogout = () => logout()
+    public render() {
+        const { classes, open, title, onMenuClick, onMobile } = this.props
+        return (
+            <MaterialAppBar
+                position='absolute'
+                className={classNames(classes.appBar, open && !onMobile && classes.appBarShift)}
             >
-                <MenuIcon />
-            </IconButton>
-            <Typography variant='title' color='inherit' noWrap={true}>
-                {title}
-            </Typography>
-        </Toolbar>
-    </MaterialAppBar>
-))
+                <Toolbar disableGutters={!open} style={{ display: 'flex' }}>
+                    <div>
+                        <IconButton
+                            color='inherit'
+                            aria-label='open drawer'
+                            onClick={onMenuClick}
+                            className={classNames(classes.menuButton, open && classes.hide)}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                    </div>
+                    <div style={{ flexGrow: 1 }}>
+                        <Typography variant='title' color='inherit' noWrap={true}>
+                            {title}
+                        </Typography>
+                    </div>
+                    <div>
+                        <Tooltip title={'Logout'}>
+                            <IconButton
+                                color='inherit'
+                                aria-label='logout'
+                                onClick={this.handleLogout}
+                            >
+                                <ExitToApp />
+                            </IconButton>
+                        </Tooltip>
+                    </div>
+                </Toolbar>
+            </MaterialAppBar>
+        )
+    }
+}
 
-export default AppBar
+export default withStyles(styles)(AppBar)

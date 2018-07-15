@@ -15,17 +15,19 @@ export const history = createBrowserHistory()
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route
         {...rest}
-        render={props =>
-            isAuthenticated() ? (
+        render={props => {
+            console.log('isAuthenticated', isAuthenticated())
+            return isAuthenticated() ? (
                 <Component {...props} />
             ) : (
                 <Redirect
                     to={{
                         pathname: '/login',
-                        state: { from: props.location }
+                        state: {from: props.location}
                     }}
                 />
             )
+        }
         }
     />
 )
@@ -35,7 +37,7 @@ const AppRouter = () => (
         <Switch>
             <Route path='/login' component={LoginContainer} />
             <AppShell>
-                <PrivateRoute exact={true} path='/' component={FeedContainer} />
+                <PrivateRoute exact={true} path='/' component={Activities} />
                 <PrivateRoute exact={true} path='/analytics' component={Analytics} />
                 <PrivateRoute exact={true} path='/activities' component={Activities} />
                 <PrivateRoute exact={true} path='/feed' component={FeedContainer} />

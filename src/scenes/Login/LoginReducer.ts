@@ -14,7 +14,8 @@ const LoginReducer = (state: IState = initialState, action: any) => {
         case LOGIN_SUCCESS: return {
             ...state,
             currentUser: action.user,
-            loading: false
+            loading: false,
+            redirectToDashboard: true,
         }
         case LOGIN_ERROR: return {
             ...state,
