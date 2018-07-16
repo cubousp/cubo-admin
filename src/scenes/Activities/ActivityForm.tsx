@@ -70,6 +70,7 @@ interface IProps {
     handleChangeDate: (name: string) => (value: Date) => void
     activityModel: any
     validState: boolean
+    disabled?: boolean
 }
 
 class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'textField' | 'menu' | 'short' | 'expansionPanel' | 'expansionPanelSummary' | 'moreOptions' | 'expansionPanelDetails'>> {
@@ -80,12 +81,13 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
     }
 
     public render() {
-        const { classes, showError, handleChange, handleChangeDate, handleCheckedChange, activityModel, validState } = this.props
+        const { classes, showError, handleChange, handleChangeDate, handleCheckedChange, activityModel, validState, disabled } = this.props
         return (
             <form className={classes.container} noValidate={true} autoComplete='off'>
                 <Typography className={classes.moreOptions}>Informações básicas</Typography>
                 <TextField
                     id='title'
+                    disabled={disabled}
                     label='Título'
                     error={showError && !validState }
                     required={true}
@@ -97,6 +99,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                 />
                 <div>
                     <DateTimePicker
+                        disabled={disabled}
                         placeholder={'Início do evento'}
                         value={activityModel.startsAt}
                         ampm={false}
@@ -116,6 +119,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                 </div>
                 <div>
                     <DateTimePicker
+                        disabled={disabled}
                         placeholder={'Término do evento'}
                         value={activityModel.endsAt}
                         className={classNames(classes.textField, classes.short)}
@@ -135,6 +139,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                 </div>
                 <TextField
                     id='kind'
+                    disabled={disabled}
                     select={true}
                     required={true}
                     className={classNames(classes.textField, classes.short)}
@@ -161,6 +166,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                     <ExpansionPanelDetails className={classes.expansionPanelDetails}>
                         <TextField
                             id='location'
+                            disabled={disabled}
                             label='Local da atividade'
                             value={activityModel.location}
                             onChange={handleChange('location')}
@@ -170,6 +176,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                         />
                         <TextField
                             id='shortDescription'
+                            disabled={disabled}
                             label='Resumo da atividade'
                             multiline={true}
                             rowsMax='3'
@@ -182,6 +189,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                         />
                         <TextField
                             id='totalVacancies'
+                            disabled={disabled}
                             label='Número de vagas'
                             type='number'
                             value={activityModel.totalVacancies}
@@ -198,6 +206,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                     <ExpansionPanelDetails className={classes.expansionPanelDetails}>
                         <TextField
                             id='speakerName'
+                            disabled={disabled}
                             label='Nome'
                             value={activityModel.speakerName}
                             onChange={handleChange('speakerName')}
@@ -206,6 +215,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                         />
                         <TextField
                             id='speakerDescription'
+                            disabled={disabled}
                             label='Descrição'
                             value={activityModel.speakerDescription}
                             onChange={handleChange('speakerDescription')}
@@ -224,6 +234,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                     <ExpansionPanelDetails className={classes.expansionPanelDetails}>
                         <DateTimePicker
                             placeholder={'Início das inscrições'}
+                            disabled={disabled}
                             value={activityModel.inscriptionBeginsAt}
                             ampm={false}
                             className={classNames(classes.textField, classes.short)}
@@ -238,6 +249,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                             rightArrowIcon={<ChevronRight/>}
                         />
                         <DateTimePicker
+                            disabled={disabled}
                             placeholder={'Término das inscrições'}
                             value={activityModel.inscriptionEndsAt}
                             ampm={false}
@@ -263,6 +275,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                             style={{ marginTop: 32, paddingLeft: 8 }}
                             control={
                                 <Checkbox
+                                    disabled={disabled}
                                     checked={activityModel.visibleForParticipants}
                                     onChange={handleCheckedChange('visibleForParticipants')}
                                     color={'primary'}
@@ -275,6 +288,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                             label='Observações para os participantes'
                             multiline={true}
                             rowsMax='3'
+                            disabled={disabled}
                             rows={3}
                             value={activityModel.longDescription}
                             onChange={handleChange('longDescription')}
@@ -285,6 +299,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                         <TextField
                             id='internalComment'
                             label='Comentários internos'
+                            disabled={disabled}
                             multiline={true}
                             rows={5}
                             value={activityModel.internalComment}
