@@ -9,7 +9,8 @@ const styles = (theme: Theme) => ({
     root: {
         backgroundColor: theme.palette.background.paper,
         width: '100%',
-        overflowY: 'auto' as any
+        overflowY: 'auto' as any,
+        padding: theme.spacing.unit*3
     },
 })
 

@@ -45,6 +45,7 @@ const styles = (theme: Theme) => ({
     },
     container: {
         margin: 'auto',
+        marginTop: 32,
         maxWidth: 600
     },
     editor: {

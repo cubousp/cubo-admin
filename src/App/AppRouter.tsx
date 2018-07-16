@@ -1,9 +1,8 @@
-/* tslint:disable jsx-no-lambda */
 import { createBrowserHistory } from 'history'
 import * as React from 'react'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import Activities from '../scenes/Activities/Activities'
-import ActivityDetail from '../scenes/Activities/ActivityDetail'
+import Activity from '../scenes/Activities/Activity'
 import Analytics from '../scenes/Analytics/Anlytics'
 import FeedContainer from '../scenes/Feed/FeedContainer'
 import LoginContainer from '../scenes/Login/LoginContainer'
@@ -40,7 +39,7 @@ const AppRouter = () => (
                 <PrivateRoute exact={true} path='/' component={Activities} />
                 <PrivateRoute exact={true} path='/analytics' component={Analytics} />
                 <PrivateRoute exact={true} path='/activities' component={Activities} />
-                <PrivateRoute path='/activities/:id' component={ActivityDetail} />
+                <PrivateRoute path='/activities/:id' component={Activity} />
                 <PrivateRoute exact={true} path='/feed' component={FeedContainer} />
                 <PrivateRoute exact={true} path='/participants' component={Participants} />
             </AppShell>
