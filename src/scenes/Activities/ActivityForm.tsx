@@ -68,11 +68,11 @@ interface IProps {
     handleChange: (name: string) => (event: any) => void
     handleCheckedChange: (name: string) => (event: any) => void
     handleChangeDate: (name: string) => (value: Date) => void
-    newActivity: any
+    activityModel: any
     validState: boolean
 }
 
-class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 'textField' | 'menu' | 'short' | 'expansionPanel' | 'expansionPanelSummary' | 'moreOptions' | 'expansionPanelDetails'>> {
+class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'textField' | 'menu' | 'short' | 'expansionPanel' | 'expansionPanelSummary' | 'moreOptions' | 'expansionPanelDetails'>> {
     public formatDate = (type: 'start' | 'end') => {
         return type === 'start' ?
             (date:Date) => `Início*: ${date.toLocaleString('pt-BR').replace(' ', ' - ')}` :
@@ -80,7 +80,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
     }
 
     public render() {
-        const { classes, showError, handleChange, handleChangeDate, handleCheckedChange, newActivity, validState } = this.props
+        const { classes, showError, handleChange, handleChangeDate, handleCheckedChange, activityModel, validState } = this.props
         return (
             <form className={classes.container} noValidate={true} autoComplete='off'>
                 <Typography className={classes.moreOptions}>Informações básicas</Typography>
@@ -91,14 +91,14 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                     required={true}
                     helperText={'Ex: Atuação do cirurgião-dentista militar nas Forças Armadas – Força Aérea: expectativas, realidades e dificuldades'}
                     className={classes.textField}
-                    value={newActivity.title}
+                    value={activityModel.title}
                     onChange={handleChange('title')}
                     margin='normal'
                 />
                 <div>
                     <DateTimePicker
                         placeholder={'Início do evento'}
-                        value={newActivity.startsAt}
+                        value={activityModel.startsAt}
                         ampm={false}
                         className={classNames(classes.textField, classes.short)}
                         timeIcon={<AccessTime/>}
@@ -117,7 +117,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                 <div>
                     <DateTimePicker
                         placeholder={'Término do evento'}
-                        value={newActivity.endsAt}
+                        value={activityModel.endsAt}
                         className={classNames(classes.textField, classes.short)}
                         ampm={false}
                         minDate={new Date(2018, 8, 17)}
@@ -138,7 +138,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                     select={true}
                     required={true}
                     className={classNames(classes.textField, classes.short)}
-                    value={newActivity.kind}
+                    value={activityModel.kind}
                     onChange={handleChange('kind')}
                     SelectProps={{
                         MenuProps: {
@@ -162,7 +162,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                         <TextField
                             id='location'
                             label='Local da atividade'
-                            value={newActivity.location}
+                            value={activityModel.location}
                             onChange={handleChange('location')}
                             helperText={'Coloque aqui o local da atividade. Ex: "Sala Laranja" '}
                             className={classes.textField}
@@ -174,7 +174,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                             multiline={true}
                             rowsMax='3'
                             rows={3}
-                            value={newActivity.shortDescription}
+                            value={activityModel.shortDescription}
                             onChange={handleChange('shortDescription')}
                             helperText={'Coloque aqui um breve resumo do conteúdo da atividade. Isso a tornará mais atrativa para os participantes.'}
                             className={classes.textField}
@@ -184,7 +184,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                             id='totalVacancies'
                             label='Número de vagas'
                             type='number'
-                            value={newActivity.totalVacancies}
+                            value={activityModel.totalVacancies}
                             onChange={handleChange('totalVacancies')}
                             className={classNames(classes.textField, classes.short)}
                             margin='normal'
@@ -199,7 +199,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                         <TextField
                             id='speakerName'
                             label='Nome'
-                            value={newActivity.speakerName}
+                            value={activityModel.speakerName}
                             onChange={handleChange('speakerName')}
                             className={classNames(classes.textField, classes.short)}
                             margin='normal'
@@ -207,7 +207,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                         <TextField
                             id='speakerDescription'
                             label='Descrição'
-                            value={newActivity.speakerDescription}
+                            value={activityModel.speakerDescription}
                             onChange={handleChange('speakerDescription')}
                             className={classes.textField}
                             multiline={true}
@@ -224,7 +224,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                     <ExpansionPanelDetails className={classes.expansionPanelDetails}>
                         <DateTimePicker
                             placeholder={'Início das inscrições'}
-                            value={newActivity.inscriptionBeginsAt}
+                            value={activityModel.inscriptionBeginsAt}
                             ampm={false}
                             className={classNames(classes.textField, classes.short)}
                             timeIcon={<AccessTime/>}
@@ -239,7 +239,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                         />
                         <DateTimePicker
                             placeholder={'Término das inscrições'}
-                            value={newActivity.inscriptionEndsAt}
+                            value={activityModel.inscriptionEndsAt}
                             ampm={false}
                             className={classNames(classes.textField, classes.short)}
                             timeIcon={<AccessTime/>}
@@ -263,7 +263,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                             style={{ marginTop: 32, paddingLeft: 8 }}
                             control={
                                 <Checkbox
-                                    checked={newActivity.visibleForParticipants}
+                                    checked={activityModel.visibleForParticipants}
                                     onChange={handleCheckedChange('visibleForParticipants')}
                                     color={'primary'}
                                 />
@@ -276,7 +276,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                             multiline={true}
                             rowsMax='3'
                             rows={3}
-                            value={newActivity.longDescription}
+                            value={activityModel.longDescription}
                             onChange={handleChange('longDescription')}
                             helperText={'Você pode incluir observações e instruções para os participantes, ex: Trazer seu próprio kit clínico'}
                             className={classes.textField}
@@ -287,7 +287,7 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
                             label='Comentários internos'
                             multiline={true}
                             rows={5}
-                            value={newActivity.internalComment}
+                            value={activityModel.internalComment}
                             onChange={handleChange('internalComment')}
                             helperText={'Comentários internos para a organização. Esse campo não será visível para os participantes. Ex: "Lembrar de trazer os brindes para a sala meia hora antes"'}
                             className={classes.textField}
@@ -300,4 +300,4 @@ class AddActivityForm extends React.Component<IProps & WithStyles<'container' | 
     }
 }
 
-export default withStyles(styles)(AddActivityForm)
+export default withStyles(styles)(ActivityForm)

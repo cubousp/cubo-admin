@@ -1,6 +1,6 @@
 import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles'
 import * as React from 'react'
-import AddActivityForm from './AddActivityForm'
+import AddActivityForm from './ActivityForm'
 
 const styles = () => ({
 })
@@ -14,7 +14,7 @@ class ActivityAbout extends React.Component<WithStyles<'container'>> {
                     handleChange={(name) => (event) => console.log('hi')}
                     handleCheckedChange={(name) => (event) => console.log('hi')}
                     handleChangeDate={(name) => (event) => console.log('hi')}
-                    newActivity={(name) => (event) => console.log('hi')}
+                    activityModel={(name) => (event) => console.log('hi')}
                     validState={true}
                 />
             </div>

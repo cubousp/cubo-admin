@@ -8,7 +8,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import CloseIcon from '@material-ui/icons/Close'
 import * as React from 'react'
-import AddActivityForm from './AddActivityForm'
+import ActivityForm from './ActivityForm'
 
 const styles = () => ({
     appBar: {
@@ -125,12 +125,12 @@ class AddActivity extends React.Component<IProps & WithStyles<'appBar' | 'flex'>
                         </Button>
                     </Toolbar>
                 </AppBar>
-                <AddActivityForm
+                <ActivityForm
                     showError={this.state.showError}
                     handleChange={this.handleChange}
                     handleChangeDate={this.handleChangeDate}
                     handleCheckedChange={this.handleCheckedChange}
-                    newActivity={this.state.newActivity}
+                    activityModel={this.state.newActivity}
                     validState={this.state.newActivity.title !== undefined && this.state.newActivity.title.trim().length !== 0}
                 />
             </Dialog>
