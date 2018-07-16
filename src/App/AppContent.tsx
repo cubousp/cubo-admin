@@ -7,6 +7,7 @@ const decorate = withStyles(({ palette, spacing, transitions, zIndex, mixins }) 
         flexGrow: 1,
         marginTop: 64,
         overflowY: 'auto' as 'auto',
+        overflowX: 'hidden' as 'hidden',
         padding: 0,
     },
     toolbar: {
