@@ -80,6 +80,7 @@ class ActivityAbout extends React.Component<IProps & WithStyles<'appBar' | 'flex
         return (
             <ActivityForm
                 disabled={true}
+                showHint={false}
                 showError={this.state.showError}
                 handleChange={this.handleChange}
                 handleChangeDate={this.handleChangeDate}

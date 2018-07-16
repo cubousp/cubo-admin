@@ -31,7 +31,7 @@ const styles = (theme: Theme) => ({
         width: 280,
     },
     expansionPanel: {
-        marginTop: 32,
+        marginTop: 16,
         boxShadow: 'none',
         '&:before': {
             content: 'none',
@@ -71,6 +71,7 @@ interface IProps {
     activityModel: any
     validState: boolean
     disabled?: boolean
+    showHint?: boolean
 }
 
 class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'textField' | 'menu' | 'short' | 'expansionPanel' | 'expansionPanelSummary' | 'moreOptions' | 'expansionPanelDetails'>> {
@@ -81,17 +82,18 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
     }
 
     public render() {
-        const { classes, showError, handleChange, handleChangeDate, handleCheckedChange, activityModel, validState, disabled } = this.props
+        const { classes, showError, handleChange, handleChangeDate, handleCheckedChange, activityModel, validState, disabled, showHint = true } = this.props
         return (
             <form className={classes.container} noValidate={true} autoComplete='off'>
                 <Typography className={classes.moreOptions}>Informações básicas</Typography>
                 <TextField
+                    style={{ marginTop: 32 }}
                     id='title'
                     disabled={disabled}
                     label='Título'
                     error={showError && !validState }
                     required={true}
-                    helperText={'Ex: Atuação do cirurgião-dentista militar nas Forças Armadas – Força Aérea: expectativas, realidades e dificuldades'}
+                    helperText={showHint && 'Ex: Atuação do cirurgião-dentista militar nas Forças Armadas – Força Aérea: expectativas, realidades e dificuldades'}
                     className={classes.textField}
                     value={activityModel.title}
                     onChange={handleChange('title')}
@@ -150,7 +152,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                             className: classes.menu,
                         },
                     }}
-                    helperText='Selecione o tipo de atividade*'
+                    helperText={showHint && 'Selecione o tipo de atividade*'}
                     margin='normal'
                 >
                     {kinds.map(option => (
@@ -170,7 +172,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                             label='Local da atividade'
                             value={activityModel.location}
                             onChange={handleChange('location')}
-                            helperText={'Coloque aqui o local da atividade. Ex: "Sala Laranja" '}
+                            helperText={showHint && 'Coloque aqui o local da atividade. Ex: "Sala Laranja" '}
                             className={classes.textField}
                             margin='normal'
                         />
@@ -183,7 +185,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                             rows={3}
                             value={activityModel.shortDescription}
                             onChange={handleChange('shortDescription')}
-                            helperText={'Coloque aqui um breve resumo do conteúdo da atividade. Isso a tornará mais atrativa para os participantes.'}
+                            helperText={showHint && 'Coloque aqui um breve resumo do conteúdo da atividade. Isso a tornará mais atrativa para os participantes.'}
                             className={classes.textField}
                             margin='normal'
                         />
@@ -272,7 +274,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails className={classes.expansionPanelDetails}>
                         <FormControlLabel
-                            style={{ marginTop: 32, paddingLeft: 8 }}
+                            style={{ marginTop: 16, paddingLeft: 8 }}
                             control={
                                 <Checkbox
                                     disabled={disabled}
@@ -292,7 +294,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                             rows={3}
                             value={activityModel.longDescription}
                             onChange={handleChange('longDescription')}
-                            helperText={'Você pode incluir observações e instruções para os participantes, ex: Trazer seu próprio kit clínico'}
+                            helperText={showHint && 'Você pode incluir observações e instruções para os participantes, ex: Trazer seu próprio kit clínico'}
                             className={classes.textField}
                             margin='normal'
                         />
@@ -304,7 +306,7 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                             rows={5}
                             value={activityModel.internalComment}
                             onChange={handleChange('internalComment')}
-                            helperText={'Comentários internos para a organização. Esse campo não será visível para os participantes. Ex: "Lembrar de trazer os brindes para a sala meia hora antes"'}
+                            helperText={showHint && 'Comentários internos para a organização. Esse campo não será visível para os participantes. Ex: "Lembrar de trazer os brindes para a sala meia hora antes"'}
                             className={classes.textField}
                             margin='normal'
                         />
