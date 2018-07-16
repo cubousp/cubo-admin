@@ -75,8 +75,8 @@ interface IProps {
 class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'textField' | 'menu' | 'short' | 'expansionPanel' | 'expansionPanelSummary' | 'moreOptions' | 'expansionPanelDetails'>> {
     public formatDate = (type: 'start' | 'end') => {
         return type === 'start' ?
-            (date:Date) => `Início*: ${date.toLocaleString('pt-BR').replace(' ', ' - ')}` :
-            (date:Date) => `Término*: ${date.toLocaleString('pt-BR').replace(' ', ' - ')}`
+            (date:Date) => `Início*: ${date && date.toLocaleString('pt-BR').replace(' ', ' - ')}` :
+            (date:Date) => `Término*: ${date && date.toLocaleString('pt-BR').replace(' ', ' - ')}`
     }
 
     public render() {

@@ -13,12 +13,12 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
         dispatch({ type: LOGIN_REQUEST })
         try {
             const { data } = await client.query({ query: signIn(email, password) }) as any
-            localStorage.setItem('token', data.signInAsAdmin.token)
-            localStorage.setItem('currentUser', JSON.stringify(data.signInAsAdmin.user))
+            localStorage.setItem('token', data.signIn)
             await client.resetStore()
-            dispatch({ type: LOGIN_SUCCESS, user: data.signInAsAdmin.user })
+            dispatch({ type: LOGIN_SUCCESS })
             dispatch(push('/'))
         } catch(err) {
+            console.log('err', err)
             dispatch({ type: LOGIN_ERROR})
         }
     }

@@ -19,3 +19,31 @@ export const CREATE_ACTIVITY = gql`
         }
     }
 `
+
+export const GET_ACTIVITY = gql`
+    query activity($id: ID!) {
+        activity(id: $id) {
+            id
+            title
+            startsAt
+            endsAt
+            kind
+            shortDescription
+            longDescription
+            internalComment
+            speaker {
+                name
+                description
+                picture
+            }
+            inscriptionBeginsAt
+            inscriptionEndsAt
+            vacancies {
+                total
+                available
+            }
+            visibleForParticipants
+            location
+        }
+    }
+`

@@ -1,7 +1,4 @@
-import { ICurrentUser } from '../services/auth'
-
 export interface IState {
-    currentUser?: ICurrentUser
     loading: boolean,
     loginError: boolean,
     postingToFeed: boolean,
@@ -17,9 +14,6 @@ export interface IState {
 }
 
 export const initialState: IState = {
-    currentUser: localStorage.getItem('currentUser') ?
-        JSON.parse(localStorage.getItem('currentUser')!) :
-        undefined,
     deletingStory: false,
     loading: false,
     loginError: false,

@@ -41,7 +41,7 @@ class Activities extends React.Component {
             this.setState({
                 savingActivity: true
             })
-            await createActivity({ variables: { newActivity: this.mapToInput(newActivity) } })
+            await createActivity({ variables: { activity: this.mapToInput(newActivity) } })
             this.setState({
                 openAddActivityDialog: false,
                 resetForm: true,
