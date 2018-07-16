@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8255f5f-3be1-443c-a590-76f8e1ccd180" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Login/LoginContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Login/LoginContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,29 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Activity.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activity.tsx">
+      <file leaf-file-name="ActivityAbout.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auth.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/auth.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="4" column="58" lean-forward="true" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Login/Login.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="102" column="22" selection-start-line="102" selection-start-column="22" selection-end-line="102" selection-end-column="22" />
+            <state relative-caret-position="218">
+              <caret line="93" column="27" lean-forward="true" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="27" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -46,69 +33,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginReducer.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Login/LoginReducer.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginContainer.tsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="LoginContainer.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scenes/Login/LoginContainer.tsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="203">
-              <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+              <caret line="17" column="54" lean-forward="true" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="state.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App/state.tsx">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="AppContent.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App/AppContent.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivityAbout.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#65#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activities.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/repositories/activities.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="40" column="18" lean-forward="true" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivityForm.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityForm.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="94" column="30" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="30" />
-              <folding>
-                <element signature="e#986#1719#0" />
               </folding>
             </state>
           </provider>
@@ -118,11 +49,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>curren</find>
-      <find>classnames</find>
-      <find>instru</find>
-      <find>mais op</find>
-      <find>pick</find>
       <find>formatD</find>
       <find>salva</find>
       <find>selecion</find>
@@ -141,13 +67,18 @@
       <find>if (loa</find>
       <find>signin</find>
       <find>currentUse</find>
-      <find>crea</find>
       <find>currentU</find>
       <find>incor</find>
       <find>user</find>
       <find>asAd</find>
       <find>ativid</find>
       <find>helperText</find>
+      <find>pale</find>
+      <find>marginTo</find>
+      <find>tí</find>
+      <find>crea</find>
+      <find>button</find>
+      <find>rela</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -167,7 +98,6 @@
         <option value="$PROJECT_DIR$/src/scenes/Login/LoginState.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Feed/Feed.css" />
         <option value="$PROJECT_DIR$/src/index.tsx" />
-        <option value="$PROJECT_DIR$/src/services/client.ts" />
         <option value="$PROJECT_DIR$/src/App/store.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Feed/FeedDialog.tsx" />
         <option value="$PROJECT_DIR$/src/repositories/feed.tsx" />
@@ -207,9 +137,10 @@
         <option value="$PROJECT_DIR$/src/App/state.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Login/LoginReducer.ts" />
         <option value="$PROJECT_DIR$/src/services/auth.ts" />
-        <option value="$PROJECT_DIR$/src/scenes/Login/LoginContainer.tsx" />
-        <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityForm.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx" />
+        <option value="$PROJECT_DIR$/src/services/client.ts" />
+        <option value="$PROJECT_DIR$/src/scenes/Login/LoginContainer.tsx" />
       </list>
     </option>
   </component>
@@ -353,16 +284,15 @@
       <workItem from="1531564973951" duration="22916000" />
       <workItem from="1531675685719" duration="9865000" />
       <workItem from="1531689004550" duration="2971000" />
-      <workItem from="1531700532939" duration="8155000" />
+      <workItem from="1531700532939" duration="11449000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207065000" />
+    <option name="totallyTimeSpent" value="210359000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -420,23 +350,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/apollo-client/core/watchQueryOptions.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="183" column="20" selection-start-line="183" selection-start-column="20" selection-end-line="183" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/store.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Dialog.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
@@ -585,13 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/client.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1914">
@@ -660,13 +566,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activities.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2987">
-          <caret line="112" column="33" selection-start-line="112" selection-start-column="33" selection-end-line="112" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -708,10 +607,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/AppContent.tsx">
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityForm.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        <state relative-caret-position="174">
+          <caret line="55" column="26" lean-forward="true" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -722,13 +621,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App/AppContent.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="9" column="40" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App/state.tsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/auth.ts">
+    <entry file="file://$PROJECT_DIR$/src/scenes/Login/LoginReducer.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="58" lean-forward="true" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
+        <state relative-caret-position="261">
+          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -742,23 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Login/LoginContainer.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Login/LoginReducer.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="12" column="9" lean-forward="true" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activity.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
@@ -766,22 +655,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx">
+    <entry file="file://$PROJECT_DIR$/src/services/client.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+        <state relative-caret-position="232">
+          <caret line="50" column="27" selection-start-line="50" selection-start-column="27" selection-end-line="50" selection-end-column="27" />
           <folding>
-            <element signature="e#0#65#0" expanded="true" />
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityForm.tsx">
+    <entry file="file://$PROJECT_DIR$/src/services/auth.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/apollo-link-error/lib/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/graphql/execution/execute.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activities.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
-          <caret line="94" column="30" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="30" />
+          <caret line="38" column="44" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="93" column="27" lean-forward="true" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="27" />
           <folding>
-            <element signature="e#986#1719#0" />
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Login/LoginContainer.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="17" column="54" lean-forward="true" selection-start-line="17" selection-start-column="54" selection-end-line="17" selection-end-column="54" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

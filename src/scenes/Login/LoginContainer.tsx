@@ -14,6 +14,8 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
         try {
             const { data } = await client.query({ query: signIn(email, password) }) as any
             localStorage.setItem('token', data.signIn)
+            localStorage.setItem('email', email)
+            localStorage.setItem('password', password)
             await client.resetStore()
             dispatch({ type: LOGIN_SUCCESS })
             dispatch(push('/'))
