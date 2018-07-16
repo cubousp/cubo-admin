@@ -47,3 +47,11 @@ export const GET_ACTIVITY = gql`
         }
     }
 `
+
+export const UPDATE_ACTIVITY = gql`
+    mutation updateActivity($id: ID!, $input: UpdateActivityInput!) {
+        updateActivity(id: $id, input: $input) {
+            id
+        }
+    }
+`

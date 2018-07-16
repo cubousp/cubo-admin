@@ -83,13 +83,13 @@ class Activities extends React.Component {
 
     public render() {
         return (
-            <div style={{ backgroundColor: '#fff', minHeight: 'calc(100vh - 64px)', margin: -24 }}>
+            <div style={{ backgroundColor: '#fff', minHeight: 'calc(100vh - 64px)'}}>
                 <Query
                     query={GET_ACTIVITIES}
                     pollInterval={500}
                 >
                     {({loading, error, data}) => {
-                        if (loading) { return <CircularProgress/> }
+                        if (loading) { return <div style={{ height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><CircularProgress style={{ width: 56, height: 56}}/></div> }
                         if (error) { return `Error! ${error.message}` }
                         return (
                             <div>
