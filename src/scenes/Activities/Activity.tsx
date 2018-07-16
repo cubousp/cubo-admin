@@ -12,6 +12,7 @@ const styles = theme => ({
     root: {
         backgroundColor: theme.palette.background.paper,
         width: '100%',
+        minHeight: 'calc(100vh - 80px)',
     },
 })
 

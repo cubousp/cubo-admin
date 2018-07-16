@@ -1,9 +1,25 @@
+import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles'
 import * as React from 'react'
+import AddActivityForm from './AddActivityForm'
 
-const ActivityAbout = () => (
-    <div>
-        Sobre
-    </div>
-)
+const styles = () => ({
+})
 
-export default ActivityAbout
+class ActivityAbout extends React.Component<WithStyles<'container'>> {
+    public render() {
+        return (
+            <div>
+                <AddActivityForm
+                    showError={false}
+                    handleChange={(name) => (event) => console.log('hi')}
+                    handleCheckedChange={(name) => (event) => console.log('hi')}
+                    handleChangeDate={(name) => (event) => console.log('hi')}
+                    newActivity={(name) => (event) => console.log('hi')}
+                    validState={true}
+                />
+            </div>
+        )
+    }
+}
+
+export default withStyles(styles)(ActivityAbout)
