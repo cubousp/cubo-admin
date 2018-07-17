@@ -1,5 +1,6 @@
 import { Theme } from '@material-ui/core'
 import Divider from '@material-ui/core/Divider/Divider'
+import Typography from '@material-ui/core/es/Typography/Typography'
 import List from '@material-ui/core/List'
 import { withStyles } from '@material-ui/core/styles'
 import * as React from 'react'
@@ -28,6 +29,15 @@ const ActivityInscriptionsList = withStyles(styles)<IProps>(({ classes, inscript
                             inscription={inscription}
                         />
                         <Divider/>
+                    </div>
+                )
+            }
+            {
+                inscriptions.length === 0 && (
+                    <div style={{ margin: '128px 0', textAlign: 'center', width: 'calc(100% - 333px)'}}>
+                        <Typography variant={'subheading'} color={'primary'}>
+                            Essa atividade ainda não possui inscritos :(
+                        </Typography>
                     </div>
                 )
             }

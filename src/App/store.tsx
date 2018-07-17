@@ -19,6 +19,5 @@ export default createStore(
         applyMiddleware(
             routerMiddleware(history)
         ),
-        (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
     ),
 )
