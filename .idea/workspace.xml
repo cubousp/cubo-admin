@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8255f5f-3be1-443c-a590-76f8e1ccd180" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/BottomActionBar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/activities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/activities.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scenes/Activities/Activities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/Activities.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,31 +17,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ActivityAbout.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ActivityAbout.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddActivity.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/AddActivity.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="23" selection-start-column="23" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Activities.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activities.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="81" column="5" lean-forward="true" selection-start-line="77" selection-start-column="4" selection-end-line="81" selection-end-column="5" />
+            <state relative-caret-position="58">
+              <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
               <folding>
-                <element signature="e#0#52#0" expanded="true" />
+                <element signature="e#572#779#0" />
               </folding>
             </state>
           </provider>
@@ -54,20 +32,17 @@
       <file leaf-file-name="activities.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/repositories/activities.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
-              <folding>
-                <element signature="e#30#563#0" />
-              </folding>
+            <state relative-caret-position="202">
+              <caret line="51" column="9" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BottomActionBar.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/BottomActionBar.tsx">
+      <file leaf-file-name="Activities.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activities.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+            <state relative-caret-position="231">
+              <caret line="44" column="27" lean-forward="true" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -79,7 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pag</find>
       <find>maxW</find>
       <find>add</find>
       <find>newA</find>
@@ -109,6 +83,7 @@
       <find>map</find>
       <find>openSN</find>
       <find>snac</find>
+      <find>mutat</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -169,8 +144,8 @@
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx" />
         <option value="$PROJECT_DIR$/src/components/BottomActionBar.tsx" />
         <option value="$PROJECT_DIR$/src/repositories/activities.tsx" />
-        <option value="$PROJECT_DIR$/src/scenes/Activities/Activities.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/Activities.tsx" />
       </list>
     </option>
   </component>
@@ -288,15 +263,16 @@
       <workItem from="1531564973951" duration="22916000" />
       <workItem from="1531675685719" duration="9865000" />
       <workItem from="1531689004550" duration="2971000" />
-      <workItem from="1531700532939" duration="16883000" />
+      <workItem from="1531700532939" duration="20464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215793000" />
+    <option name="totallyTimeSpent" value="219374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -306,7 +282,7 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3344086" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3076093" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.3076093" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -681,8 +657,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/BottomActionBar.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="319">
+          <caret line="30" column="2" lean-forward="true" selection-start-line="30" selection-start-column="2" selection-end-line="30" selection-end-column="2" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
@@ -696,30 +672,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="58" column="5" lean-forward="true" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
+          <folding>
+            <element signature="e#572#779#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/repositories/activities.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="56" column="1" lean-forward="true" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
-          <folding>
-            <element signature="e#30#563#0" />
-          </folding>
+        <state relative-caret-position="202">
+          <caret line="51" column="9" selection-start-line="51" selection-start-column="4" selection-end-line="51" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activities.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="81" column="5" lean-forward="true" selection-start-line="77" selection-start-column="4" selection-end-line="81" selection-end-column="5" />
+        <state relative-caret-position="231">
+          <caret line="44" column="27" lean-forward="true" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAbout.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
         </state>
       </provider>
     </entry>
