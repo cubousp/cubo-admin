@@ -71,7 +71,7 @@ class Activity extends React.Component<WithStyles<'root' | 'loadingContainer' | 
                                 onChangeIndex={this.handleChangeIndex}
                             >
                                     <ActivityAbout activity={activity}/>
-                                    <ActivityInscriptions/>
+                                    <ActivityInscriptions activity={activity}/>
                                     <ActivityAttendanceControl/>
                             </SwipeableViews>
                         )

@@ -44,6 +44,14 @@ export const GET_ACTIVITY = gql`
             }
             visibleForParticipants
             location
+            enrolled {
+                id
+                participant {
+                    id
+                    name
+                    email
+                }
+            }
         }
     }
 `
