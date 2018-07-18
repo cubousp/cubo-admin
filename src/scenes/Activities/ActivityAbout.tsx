@@ -172,7 +172,8 @@ class ActivityAbout extends React.Component<IProps & WithStyles<'container' | 'b
         inscriptionEndsAt: activity.inscriptionEndsAt && activity.inscriptionEndsAt.toISOString(),
         vacancies: undefined,
         __typename: undefined,
-        id: undefined
+        id: undefined,
+        enrolled: undefined,
     })
 }
 

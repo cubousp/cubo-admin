@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8255f5f-3be1-443c-a590-76f8e1ccd180" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/repositories/participants.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAdd.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAutoSuggest.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/participants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/participants.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsStats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsStats.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAdd.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ActivityInscriptions.tsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ActivityInscriptions.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="41" column="71" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
+            <state relative-caret-position="407">
+              <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -41,26 +37,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityInscriptionsAdd.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAdd.tsx">
+      <file leaf-file-name="Activities.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activities.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-318">
-              <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
-              <folding>
-                <element signature="n#!!block;n#IProps#0" />
-              </folding>
+            <state relative-caret-position="509">
+              <caret line="126" column="30" lean-forward="true" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityInscriptionsAutoSuggest.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAutoSuggest.tsx">
+      <file leaf-file-name="ActivityInscriptionsAdd.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAdd.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-550">
-              <caret line="117" column="43" lean-forward="true" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
+            <state relative-caret-position="233">
+              <caret line="53" column="33" lean-forward="true" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
               <folding>
-                <element signature="n#!!block;n#renderInput#0" />
-                <element signature="e#3299#3711#0" />
+                <element signature="e#0#52#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -69,8 +61,8 @@
       <file leaf-file-name="participants.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/repositories/participants.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+            <state relative-caret-position="377">
+              <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -175,11 +167,11 @@
         <option value="$PROJECT_DIR$/src/App/store.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsList.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsStats.tsx" />
-        <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionAutosugest.tsx" />
-        <option value="$PROJECT_DIR$/src/repositories/participants.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAutoSuggest.tsx" />
+        <option value="$PROJECT_DIR$/src/repositories/participants.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAdd.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx" />
       </list>
     </option>
   </component>
@@ -229,6 +221,19 @@
               <item name="cubo-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cubo-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cubo-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="scenes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cubo-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cubo-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="scenes" type="462c0819:PsiDirectoryNode" />
+              <item name="Activities" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -305,7 +310,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238905000" />
+    <option name="totallyTimeSpent" value="240428000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -679,13 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activities.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2755">
-          <caret line="104" column="41" selection-start-line="96" selection-start-column="32" selection-end-line="104" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
@@ -700,13 +698,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="41" column="71" selection-start-line="41" selection-start-column="71" selection-end-line="41" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/repositories/activities.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
@@ -714,31 +705,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/repositories/participants.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="4" column="34" lean-forward="true" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAdd.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-318">
-          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
-          <folding>
-            <element signature="n#!!block;n#IProps#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAutoSuggest.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-550">
+        <state relative-caret-position="320">
           <caret line="117" column="43" lean-forward="true" selection-start-line="117" selection-start-column="43" selection-end-line="117" selection-end-column="43" />
           <folding>
             <element signature="n#!!block;n#renderInput#0" />
             <element signature="e#3299#3711#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repositories/participants.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activities.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="126" column="30" lean-forward="true" selection-start-line="126" selection-start-column="30" selection-end-line="126" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAdd.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="53" column="33" lean-forward="true" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="40" column="23" lean-forward="true" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
         </state>
       </provider>
     </entry>

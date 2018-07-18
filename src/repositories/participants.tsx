@@ -8,3 +8,10 @@ export const SEARCH_PARTICIPANT = gql`
         }
     }
 `
+export const ENROLL_PARTICIPANT = gql`
+    mutation enrollParticipant($activityId: ID!, $participantId: ID!) {
+        enrollParticipant(activityId: $activityId, participantId: $participantId) {
+            id
+        }
+    }
+`
