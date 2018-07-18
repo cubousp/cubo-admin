@@ -7,6 +7,8 @@ import MenuItem from '@material-ui/core/MenuItem/MenuItem'
 import withStyles from '@material-ui/core/styles/withStyles'
 import { MoreVert } from '@material-ui/icons'
 import * as React from 'react'
+import Mutation from 'react-apollo/Mutation'
+import { DISENROLL_PARTICIPANT } from '../../repositories/participants'
 
 const styles = (theme: Theme) => ({
     title: {
@@ -17,6 +19,7 @@ const styles = (theme: Theme) => ({
 
 interface IProps {
     inscription
+    onRemove: (removeInscription) => Promise<void>
 }
 
 class ActivityInscriptionsListCard extends React.Component<IProps & WithStyles<'title'>> {
@@ -30,10 +33,6 @@ class ActivityInscriptionsListCard extends React.Component<IProps & WithStyles<'
 
     public handleClick = event => {
         this.setState({ anchorEl: event.currentTarget })
-    }
-
-    public handleRemove = () => {
-        console.log('remove')
     }
 
     public render() {
@@ -58,7 +57,11 @@ class ActivityInscriptionsListCard extends React.Component<IProps & WithStyles<'
                     open={Boolean(this.state.anchorEl)}
                     onClose={this.handleClose}
                 >
-                    <MenuItem onClick={this.handleRemove}>Remover</MenuItem>
+                    <Mutation mutation={DISENROLL_PARTICIPANT} variables={{ inscriptionId: inscription.id }}>
+                        {(removeInscription) => (
+                            <MenuItem onClick={() => this.props.onRemove(removeInscription)}>Remover</MenuItem>
+                        )}
+                    </Mutation>
                 </Menu>
             </ListItem>
         )

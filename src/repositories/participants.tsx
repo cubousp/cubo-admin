@@ -15,3 +15,9 @@ export const ENROLL_PARTICIPANT = gql`
         }
     }
 `
+
+export const DISENROLL_PARTICIPANT = gql`
+    mutation disenrollParticipant($inscriptionId: ID!) {
+        disenrollParticipant(inscriptionId: $inscriptionId)
+    }
+`

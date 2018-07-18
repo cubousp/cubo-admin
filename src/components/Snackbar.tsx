@@ -96,15 +96,17 @@ interface ISnackbarProps {
     onClose: (event: any, reason: any) => void
     message: string
     variant: 'success' | 'warning' | 'error' | 'info'
+    absolute?: boolean
 }
 
 const Snackbar = decorated2(
     class extends React.Component<WithStyles<'margin'> & ISnackbarProps> {
         public render() {
-            const { open, onClose, message, variant } = this.props
+            const { open, onClose, message, variant, absolute } = this.props
             return (
                 <div>
                     <MaterialSnackbar
+                        style={{ position: absolute? 'absolute' : 'fixed' }}
                         anchorOrigin={{
                             horizontal: 'left',
                             vertical: 'bottom',

@@ -3,6 +3,7 @@ import { Add } from '@material-ui/icons'
 import * as React from 'react'
 import Mutation from 'react-apollo/Mutation'
 import Dialog from '../../components/Dialog'
+import Snackbar from '../../components/Snackbar'
 import { ENROLL_PARTICIPANT } from '../../repositories/participants'
 import ActivityInscriptionsAdd from './ActivityInscriptionsAdd'
 import ActivityInscriptionsList from './ActivityInscriptionsList'
@@ -17,7 +18,8 @@ class ActivityInscriptions extends React.Component<IProps> {
         openActivityInscriptionsAdd: false,
         savingParticipant: false,
         showSaveError: false,
-        saveErrorMessage: undefined
+        saveErrorMessage: undefined,
+        openSnackbar: false
     }
 
     public ERROR_MESSAGE = {
@@ -43,6 +45,9 @@ class ActivityInscriptions extends React.Component<IProps> {
                 savingParticipant: true,
             })
             await enrollParticipant({ variables: { activityId: this.props.activity.id, participantId: participant.id }})
+            this.setState({
+                openSnackbar: true
+            })
         } catch (err) {
             const saveErrorMessage = (err.graphQLErrors && err.graphQLErrors.length) ? this.ERROR_MESSAGE[err.graphQLErrors[0].code] : 'Houve um erro inesperado. Tente novamente mais tarde.'
             this.setState({
@@ -60,6 +65,12 @@ class ActivityInscriptions extends React.Component<IProps> {
         this.setState({
             showSaveError: false,
             saveErrorMessage: undefined
+        })
+    }
+
+    public handleCloseSnackbar = () => {
+        this.setState({
+            openSnackbar: false
         })
     }
 
@@ -96,6 +107,13 @@ class ActivityInscriptions extends React.Component<IProps> {
                                 disableCancelButton={true}
                                 title={'Não foi possível salvar a inscrição'}
                                 text={this.state.saveErrorMessage}
+                            />
+                            <Snackbar
+                                open={this.state.openSnackbar}
+                                onClose={this.handleCloseSnackbar}
+                                message={'Participante inscrito com sucesso'}
+                                variant={'success'}
+                                absolute={true}
                             />
                         </div>
                     )}

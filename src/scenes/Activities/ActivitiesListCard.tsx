@@ -32,15 +32,11 @@ class ActivitiesListCard extends React.Component<IProps & WithStyles<'title'>> {
         'WORKSHOP': 'Workshop'
     }
 
-    public handleClick = () => {
-        console.log('go to detail', this.props.activity.id)
-    }
-
     public render() {
         const {classes, activity} = this.props
         return (
             <Link to={`/activities/${activity.id}`} style={{ textDecoration: 'none' }}>
-                <ListItem button={true} onClick={this.handleClick}>
+                <ListItem button={true}>
                     <Avatar
                         name={this.mapKind[activity.kind]}
                         size={56}
