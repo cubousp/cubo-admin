@@ -2,6 +2,7 @@ import Button from '@material-ui/core/Button/Button'
 import { Add } from '@material-ui/icons'
 import * as React from 'react'
 import Mutation from 'react-apollo/Mutation'
+import Dialog from '../../components/Dialog'
 import { ENROLL_PARTICIPANT } from '../../repositories/participants'
 import ActivityInscriptionsAdd from './ActivityInscriptionsAdd'
 import ActivityInscriptionsList from './ActivityInscriptionsList'
@@ -14,7 +15,14 @@ interface IProps {
 class ActivityInscriptions extends React.Component<IProps> {
     public state = {
         openActivityInscriptionsAdd: false,
-        savingParticipant: false
+        savingParticipant: false,
+        showSaveError: false,
+        saveErrorMessage: undefined
+    }
+
+    public ERROR_MESSAGE = {
+        NoAvailableVacancies: 'Não há vagas disponíveis para essa atividade',
+        ItemAlreadyExists: 'Participante já inscrito nessa atividade'
     }
 
     public handleAddInscriptionClick = () => {
@@ -36,13 +44,25 @@ class ActivityInscriptions extends React.Component<IProps> {
             })
             await enrollParticipant({ variables: { activityId: this.props.activity.id, participantId: participant.id }})
         } catch (err) {
-            console.log('err', err)
+            const saveErrorMessage = (err.graphQLErrors && err.graphQLErrors.length) ? this.ERROR_MESSAGE[err.graphQLErrors[0].code] : 'Houve um erro inesperado. Tente novamente mais tarde.'
+            this.setState({
+                showSaveError: true,
+                saveErrorMessage,
+            })
         }
         this.setState({
             savingParticipant: false,
             openActivityInscriptionsAdd: false
         })
     }
+
+    public closeErrorDialog = () => {
+        this.setState({
+            showSaveError: false,
+            saveErrorMessage: undefined
+        })
+    }
+
     public render() {
         const { activity } = this.props
         return (
@@ -62,12 +82,22 @@ class ActivityInscriptions extends React.Component<IProps> {
                 </Button>
                 <Mutation mutation={ENROLL_PARTICIPANT} >
                     {(enrollParticipant) => (
-                        <ActivityInscriptionsAdd
-                            open={this.state.openActivityInscriptionsAdd}
-                            handleClose={this.handleAddInscriptionClose}
-                            handleSave={(participant) => this.handleAddInscriptionSave(enrollParticipant, participant)}
-                            saving={this.state.savingParticipant}
-                        />
+                        <div>
+                            <ActivityInscriptionsAdd
+                                open={this.state.openActivityInscriptionsAdd}
+                                handleClose={this.handleAddInscriptionClose}
+                                handleSave={(participant) => this.handleAddInscriptionSave(enrollParticipant, participant)}
+                                saving={this.state.savingParticipant}
+                            />
+                            <Dialog
+                                open={this.state.showSaveError}
+                                isLoading={false}
+                                onConfirm={this.closeErrorDialog}
+                                disableCancelButton={true}
+                                title={'Não foi possível salvar a inscrição'}
+                                text={this.state.saveErrorMessage}
+                            />
+                        </div>
                     )}
                 </Mutation>
             </div>

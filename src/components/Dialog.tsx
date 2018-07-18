@@ -15,12 +15,13 @@ function Transition(props: any) {
 interface IProps {
     open: boolean
     isLoading: boolean
-    onConfirm: () => Promise<void>
-    onCancel: () => void
+    onConfirm: (() => Promise<void>) |(() => void)
+    onCancel?: () => void
     title: string,
     text?: string
     cancelLabel?: string
     confirmLabel?: string
+    disableCancelButton?: boolean
 }
 
 const Dialog:React.SFC<IProps> = (props) => (
@@ -47,9 +48,13 @@ const Dialog:React.SFC<IProps> = (props) => (
                     </div>
                 ) : (
                     <DialogActions>
-                        <Button onClick={props.onCancel}>
-                            {props.cancelLabel || 'Cancelar'}
-                        </Button>
+                        {
+                            props.disableCancelButton ? null :
+                                <Button onClick={props.onCancel}>
+                                    {props.cancelLabel || 'Cancelar'}
+                                </Button>
+                        }
+
                         <Button onClick={props.onConfirm} color='primary'>
                             {props.confirmLabel || 'Ok'}
                         </Button>
