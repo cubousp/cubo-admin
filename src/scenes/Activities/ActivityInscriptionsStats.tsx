@@ -59,11 +59,11 @@ const ActivityInscriptionsStats = withStyles(styles)<IProps>(({ classes, availab
                             <div style={{ marginLeft: 16 }}>
                                 <div style={{ display: 'flex', alignItems: 'center'}}>
                                     <div className={classes.dot} style={{ backgroundColor: '#4CAF50' }}/>
-                                    <Typography variant={'body1'} >Vagas disponíveis</Typography>
+                                    <Typography variant={'body1'} >Vagas disponíveis: {available}</Typography>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', marginTop: 8}}>
                                     <div className={classes.dot} style={{ backgroundColor: '#F44336'}}/>
-                                    <Typography variant={'body1'}>Vagas preenchidas</Typography>
+                                    <Typography variant={'body1'}>Vagas preenchidas: {enrolled}</Typography>
                                 </div>
                             </div>
                         </div>
