@@ -11,7 +11,7 @@ const ActivityInscriptions = ({ activity }: IProps) => (
         <ActivityInscriptionsList
             inscriptions={activity.enrolled}
         />
-        <ActivityInscriptionsStats/>
+        <ActivityInscriptionsStats available={activity.vacancies.available} enrolled={activity.vacancies.total - activity.vacancies.available} />
     </div>
 )
 
