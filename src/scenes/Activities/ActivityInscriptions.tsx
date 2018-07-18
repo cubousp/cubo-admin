@@ -66,6 +66,7 @@ class ActivityInscriptions extends React.Component<IProps> {
                             open={this.state.openActivityInscriptionsAdd}
                             handleClose={this.handleAddInscriptionClose}
                             handleSave={(participant) => this.handleAddInscriptionSave(enrollParticipant, participant)}
+                            saving={this.state.savingParticipant}
                         />
                     )}
                 </Mutation>
