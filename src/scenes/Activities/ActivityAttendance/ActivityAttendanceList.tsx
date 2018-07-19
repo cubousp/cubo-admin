@@ -4,8 +4,8 @@ import Typography from '@material-ui/core/es/Typography/Typography'
 import List from '@material-ui/core/List'
 import { withStyles } from '@material-ui/core/styles'
 import * as React from 'react'
-import Snackbar from '../../components/Snackbar'
-import ActivityInscriptionsListCard from './ActivityInscriptionsListCard'
+import Snackbar from '../../../components/Snackbar'
+import ActivityAttendanceListCard from './ActivityAttendanceListCard'
 
 const styles = (theme: Theme) => ({
     root: {
@@ -20,7 +20,7 @@ interface IProps {
     inscriptions: any[]
 }
 
-class ActivityInscriptionsList extends React.Component<IProps & WithStyles<'root'>> {
+class ActivityAttendanceList extends React.Component<IProps & WithStyles<'root'>> {
     public state = {
         openSnackbar: false,
     }
@@ -31,8 +31,8 @@ class ActivityInscriptionsList extends React.Component<IProps & WithStyles<'root
         })
     }
 
-    public onRemove = async(removeActivity) => {
-        removeActivity().then(() => {
+    public onUpdateStatus = async(updateStatus, variables) => {
+        updateStatus({ variables }).then(() => {
             this.setState({
                 openSnackbar: true
             })
@@ -47,9 +47,9 @@ class ActivityInscriptionsList extends React.Component<IProps & WithStyles<'root
                     {
                         inscriptions.map((inscription: any) =>
                             <div key={inscription.id}>
-                                <ActivityInscriptionsListCard
+                                <ActivityAttendanceListCard
                                     inscription={inscription}
-                                    onRemove={this.onRemove}
+                                    onUpdateStatus={this.onUpdateStatus}
                                 />
                                 <Divider/>
                             </div>
@@ -68,8 +68,8 @@ class ActivityInscriptionsList extends React.Component<IProps & WithStyles<'root
                 <Snackbar
                     open={this.state.openSnackbar}
                     onClose={this.handleCloseSnackbar}
-                    message={'Inscrição removida com sucesso'}
-                    variant={'success'}
+                    message={'Sucesso'}
+                    variant={'info'}
                     absolute={true}
                 />
             </div>
@@ -77,4 +77,4 @@ class ActivityInscriptionsList extends React.Component<IProps & WithStyles<'root
     }
 }
 
-export default withStyles(styles)(ActivityInscriptionsList)
+export default withStyles(styles)(ActivityAttendanceList)

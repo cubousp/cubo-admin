@@ -21,3 +21,9 @@ export const DISENROLL_PARTICIPANT = gql`
         disenrollParticipant(inscriptionId: $inscriptionId)
     }
 `
+
+export const UPDATE_INSCRIPTION_STATUS = gql`
+    mutation updateInscriptionStatus($inscriptionId: ID!, $status: InscriptionStatus!) {
+        updateInscriptionStatus(inscriptionId: $inscriptionId, status: $status)
+    }
+`

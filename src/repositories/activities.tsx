@@ -46,6 +46,7 @@ export const GET_ACTIVITY = gql`
             location
             enrolled {
                 id
+                status
                 participant {
                     id
                     name

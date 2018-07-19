@@ -8,8 +8,8 @@ import Query from 'react-apollo/Query'
 import SwipeableViews from 'react-swipeable-views'
 import { GET_ACTIVITY } from '../../repositories/activities'
 import ActivityAbout from './ActivityAbout'
-import ActivityAttendanceControl from './ActivityAttendanceControl'
-import ActivityInscriptions from './ActivityInscriptions'
+import ActivityAttendance from './ActivityAttendance/ActivityAttendance'
+import ActivityInscriptions from './ActivityInscriptions/ActivityInscriptions'
 
 const styles = theme => ({
     root: {
@@ -72,7 +72,7 @@ class Activity extends React.Component<WithStyles<'root' | 'loadingContainer' | 
                             >
                                     <ActivityAbout activity={activity}/>
                                     <ActivityInscriptions activity={activity}/>
-                                    <ActivityAttendanceControl/>
+                                    <ActivityAttendance activity={activity} />
                             </SwipeableViews>
                         )
                     }}

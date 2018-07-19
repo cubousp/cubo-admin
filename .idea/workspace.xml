@@ -2,13 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8255f5f-3be1-443c-a590-76f8e1ccd180" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendance.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceAdd.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceAutoSuggest.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceListCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptionsStats.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Snackbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Snackbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/activities.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/activities.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repositories/participants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/participants.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivitiesListCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivitiesListCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsList.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsListCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsListCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/Activity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/Activity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendanceControl.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAdd.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptionsAdd.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAutoSuggest.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptionsAutoSuggest.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptionsList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsListCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptionsListCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsStats.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceStats.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,20 +32,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ActivityInscriptionsListCard.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsListCard.tsx">
+      <file leaf-file-name="ActivityAttendanceListCard.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceListCard.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1247">
-              <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+            <state relative-caret-position="145">
+              <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+              <folding>
+                <element signature="e#636#715#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Activities.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activities.tsx">
+      <file leaf-file-name="ActivityAttendance.tsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendance.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="125" column="30" lean-forward="true" selection-start-line="120" selection-start-column="28" selection-end-line="125" selection-end-column="30" />
+            <state relative-caret-position="-582">
+              <folding>
+                <element signature="e#0#30#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityAttendanceList.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceList.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="70" column="37" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activities.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/repositories/activities.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-134">
+              <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -43,47 +76,20 @@
       <file leaf-file-name="participants.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/repositories/participants.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+            <state relative-caret-position="447">
+              <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityInscriptionsList.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsList.tsx">
+      <file leaf-file-name="ActivityAttendanceStats.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceStats.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1520">
-              <caret line="73" column="18" lean-forward="true" selection-start-line="67" selection-start-column="16" selection-end-line="73" selection-end-column="18" />
+            <state relative-caret-position="303">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding>
-                <element signature="e#0#53#0" expanded="true" />
+                <element signature="e#0#52#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Snackbar.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Snackbar.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="107" column="37" lean-forward="true" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivitiesListCard.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivitiesListCard.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-29">
-              <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActivityInscriptions.tsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="49" column="14" lean-forward="true" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -92,12 +98,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>ativid</find>
-      <find>helperText</find>
-      <find>pale</find>
-      <find>marginTo</find>
-      <find>tí</find>
-      <find>crea</find>
       <find>button</find>
       <find>rela</find>
       <find>margin: -2</find>
@@ -122,6 +122,12 @@
       <find>suggest</find>
       <find>nome</find>
       <find>console.log</find>
+      <find>inscri</find>
+      <find>inscr</find>
+      <find>inscrip</find>
+      <find>inscription</find>
+      <find>remov</find>
+      <find>enrol</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -133,11 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/scenes/Feed/FeedDialog.tsx" />
-        <option value="$PROJECT_DIR$/src/repositories/feed.tsx" />
-        <option value="$PROJECT_DIR$/src/scenes/Feed/FeedReducer.ts" />
-        <option value="$PROJECT_DIR$/src/scenes/Feed/FeedContainer.tsx" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivitiesContainer.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Feed/FeedCard.tsx" />
         <option value="$PROJECT_DIR$/typings.d.ts" />
@@ -168,9 +169,6 @@
         <option value="$PROJECT_DIR$/src/scenes/Login/LoginContainer.tsx" />
         <option value="$PROJECT_DIR$/src/components/BottomActionBar.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/Activities.tsx" />
-        <option value="$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx" />
-        <option value="$PROJECT_DIR$/src/scenes/Activities/Activity.tsx" />
-        <option value="$PROJECT_DIR$/src/repositories/activities.tsx" />
         <option value="$PROJECT_DIR$/src/App/store.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsStats.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionAutosugest.tsx" />
@@ -179,11 +177,19 @@
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAdd.tsx" />
         <option value="$PROJECT_DIR$/src/components/Dialog.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivitiesListCard.tsx" />
-        <option value="$PROJECT_DIR$/src/repositories/participants.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsListCard.tsx" />
         <option value="$PROJECT_DIR$/src/components/Snackbar.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsList.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceAdd.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/Activity.tsx" />
+        <option value="$PROJECT_DIR$/src/repositories/activities.tsx" />
+        <option value="$PROJECT_DIR$/src/repositories/participants.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceList.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceListCard.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceStats.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendance.tsx" />
       </list>
     </option>
   </component>
@@ -238,6 +244,12 @@
               <item name="cubo-admin" type="b2602c69:ProjectViewProjectNode" />
               <item name="cubo-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="repositories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cubo-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cubo-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="scenes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -246,6 +258,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="scenes" type="462c0819:PsiDirectoryNode" />
               <item name="Activities" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cubo-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cubo-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="scenes" type="462c0819:PsiDirectoryNode" />
+              <item name="Activities" type="462c0819:PsiDirectoryNode" />
+              <item name="ActivityAttendance" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -268,17 +288,18 @@
     <property name="typescript-compiler-editor-notification" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/scenes/Activities" />
+      <recent name="$PROJECT_DIR$/src/scenes/Feed" />
+      <recent name="$PROJECT_DIR$/src/scenes" />
+      <recent name="$PROJECT_DIR$/features" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/components/App/AppDrawer" />
-      <recent name="$PROJECT_DIR$/src/components/App" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/scenes/Feed" />
-      <recent name="$PROJECT_DIR$/src/scenes" />
-      <recent name="$PROJECT_DIR$/features" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -318,12 +339,12 @@
       <workItem from="1531700532939" duration="20464000" />
       <workItem from="1531831157100" duration="4233000" />
       <workItem from="1531841316797" duration="2860000" />
-      <workItem from="1531951898959" duration="2654000" />
+      <workItem from="1531951898959" duration="12755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248021000" />
+    <option name="totallyTimeSpent" value="258122000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -336,9 +357,9 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.33227512" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49901184" weight="0.22989747" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49901184" visible="true" weight="0.22989747" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32903227" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32804233" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.5009881" side_tool="true" weight="0.23020834" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -384,63 +405,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/material-ui-pickers/DateTimePicker/DateTimePicker.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/DateTimePicker.tsx" />
-    <entry file="file://$PROJECT_DIR$/node_modules/material-ui-pickers/DateTimePicker/DateTimePickerWrapper.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="20" column="29" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/repositories/feed.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="26" column="1" lean-forward="true" selection-start-line="14" selection-end-line="26" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tslint.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="20" column="29" lean-forward="true" selection-start-line="20" selection-start-column="29" selection-end-line="20" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1914">
-          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Feed/FeedContainer.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2779">
-          <caret line="101" column="15" selection-start-line="101" selection-start-column="15" selection-end-line="101" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/AppDrawer/drawerItems.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App/AppBar.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -576,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Paper/Paper.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Modal/Modal.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-116">
@@ -614,7 +571,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsStats.tsx">
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptionsStats.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
           <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
@@ -628,20 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2407">
           <caret line="108" column="16" selection-start-line="108" selection-start-column="16" selection-end-line="108" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activity.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="73" column="52" selection-start-line="73" selection-start-column="52" selection-end-line="73" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -662,14 +605,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/repositories/activities.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="58" column="24" lean-forward="true" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAdd.tsx">
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptionsAdd.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
@@ -679,7 +615,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsAutoSuggest.tsx">
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptionsAutoSuggest.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3625">
           <caret line="149" column="15" selection-start-line="149" selection-start-column="15" selection-end-line="149" selection-end-column="15" />
@@ -696,10 +632,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/repositories/participants.tsx">
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivitiesListCard.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="22" column="1" lean-forward="true" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        <state relative-caret-position="-29">
+          <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -710,10 +646,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsListCard.tsx">
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptionsList.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1247">
-          <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+        <state relative-caret-position="1520">
+          <caret line="73" column="18" lean-forward="true" selection-start-line="67" selection-start-column="16" selection-end-line="73" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -724,27 +663,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivitiesListCard.tsx">
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptionsListCard.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="41" column="33" lean-forward="true" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+        <state relative-caret-position="1247">
+          <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptionsList.tsx">
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivitiesList.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1520">
-          <caret line="73" column="18" lean-forward="true" selection-start-line="67" selection-start-column="16" selection-end-line="73" selection-end-column="18" />
+        <state relative-caret-position="522">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions.tsx">
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityInscriptions/ActivityInscriptions.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="49" column="14" lean-forward="true" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
+        <state relative-caret-position="174">
+          <caret line="15" column="60" lean-forward="true" selection-start-line="15" selection-start-column="60" selection-end-line="15" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activity.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="3" column="39" lean-forward="true" selection-start-line="3" selection-start-column="39" selection-end-line="3" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceAutoSuggest.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2726">
+          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceAdd.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="62" column="57" selection-start-line="62" selection-start-column="57" selection-end-line="62" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Button/Button.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Paper/Paper.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/Menu/Menu.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@material-ui/core/MenuList/MenuList.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repositories/activities.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-134">
+          <caret line="48" column="22" lean-forward="true" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repositories/participants.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="26" column="68" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceStats.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceListCard.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
+          <folding>
+            <element signature="e#636#715#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendanceList.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="70" column="37" selection-start-line="70" selection-start-column="30" selection-end-line="70" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/ActivityAttendance/ActivityAttendance.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-582">
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
