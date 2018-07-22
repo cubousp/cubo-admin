@@ -25,6 +25,7 @@ interface IProps {
 class ActivityInscriptionsList extends React.Component<IProps & WithStyles<'root'>> {
     public state = {
         openSnackbar: false,
+        filteredInscriptions: this.props.inscriptions
     }
 
     public handleCloseSnackbar = () => {
@@ -41,14 +42,33 @@ class ActivityInscriptionsList extends React.Component<IProps & WithStyles<'root
         })
     }
 
+    public filterBy = (searchTerm: string) => {
+        if (searchTerm.trim().length === 0) {
+            this.setState({
+                filteredInscriptions: this.props.inscriptions
+            })
+        }
+        else {
+            const filtered = this.state.filteredInscriptions.filter(({ participant: { email, name }}) => {
+                return this.normalizeString(email).indexOf(this.normalizeString(searchTerm)) > -1 || this.normalizeString(name).indexOf(this.normalizeString(searchTerm)) > -1
+            })
+
+            this.setState({
+                filteredInscriptions: filtered
+            })
+        }
+    }
+
+    public normalizeString = (str: string ) => str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase()
+
     public render() {
-        const { classes, inscriptions  } = this.props
+        const { classes } = this.props
         return (
             <div className={classes.root}>
-                <Searchbar placeholder={'Pesquisar'}/>
+                <Searchbar placeholder={'Pesquisar'} onUpdateSearchTerm={(searchTerm) => this.filterBy(searchTerm)} />
                 <List>
                     {
-                        inscriptions.map((inscription: any) =>
+                        this.state.filteredInscriptions.map((inscription: any) =>
                             <div key={inscription.id}>
                                 <ActivityInscriptionsListCard
                                     inscription={inscription}
@@ -59,10 +79,19 @@ class ActivityInscriptionsList extends React.Component<IProps & WithStyles<'root
                         )
                     }
                     {
-                        inscriptions.length === 0 && (
-                            <div style={{ margin: '128px 0', textAlign: 'center', width: 'calc(100% - 333px)'}}>
+                        this.props.inscriptions.length === 0 && (
+                            <div style={{ textAlign: 'center', width: '100%', marginTop: 300 }}>
                                 <Typography variant={'subheading'} color={'primary'}>
                                     Essa atividade ainda não possui inscritos :(
+                                </Typography>
+                            </div>
+                        )
+                    }
+                    {
+                        this.props.inscriptions.length !== 0 && this.state.filteredInscriptions.length === 0 && (
+                            <div style={{ textAlign: 'center', width: '100%', marginTop: 300 }}>
+                                <Typography variant={'subheading'} color={'primary'}>
+                                    Nenhum participante encontrado com esses termos :(
                                 </Typography>
                             </div>
                         )

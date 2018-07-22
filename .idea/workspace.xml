@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8255f5f-3be1-443c-a590-76f8e1ccd180" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Searchbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenes/Activities/Activity/Activity.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/Activity/Activity.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Searchbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Searchbar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scenes/Activities/Activity/ActivityInscriptions/ActivityInscriptionsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenes/Activities/Activity/ActivityInscriptions/ActivityInscriptionsList.tsx" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -70,22 +68,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Searchbar.tsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Searchbar.tsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Searchbar.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-              <folding>
-                <element signature="e#0#52#0" expanded="true" />
-              </folding>
+            <state>
+              <caret lean-forward="true" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityInscriptionsList.tsx" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ActivityInscriptionsList.tsx" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activity/ActivityInscriptions/ActivityInscriptionsList.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="380">
+              <caret line="93" column="83" selection-start-line="93" selection-start-column="83" selection-end-line="93" selection-end-column="83" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -211,8 +207,8 @@
         <option value="$PROJECT_DIR$/src/scenes/Activities/AddActivity.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/Activity/ActivityInscriptions/ActivityInscriptions.tsx" />
         <option value="$PROJECT_DIR$/src/scenes/Activities/Activity/Activity.tsx" />
-        <option value="$PROJECT_DIR$/src/scenes/Activities/Activity/ActivityInscriptions/ActivityInscriptionsList.tsx" />
         <option value="$PROJECT_DIR$/src/components/Searchbar.tsx" />
+        <option value="$PROJECT_DIR$/src/scenes/Activities/Activity/ActivityInscriptions/ActivityInscriptionsList.tsx" />
       </list>
     </option>
   </component>
@@ -385,12 +381,12 @@
       <workItem from="1531831157100" duration="4233000" />
       <workItem from="1531841316797" duration="2860000" />
       <workItem from="1531951898959" duration="12755000" />
-      <workItem from="1532289388587" duration="9604000" />
+      <workItem from="1532289388587" duration="11684000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267750000" />
+    <option name="totallyTimeSpent" value="269830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
@@ -403,7 +399,7 @@
       <window_info id="npm" order="2" side_tool="true" />
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3311828" />
       <window_info anchor="bottom" id="TypeScript" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49901184" visible="true" weight="0.22989747" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49901184" weight="0.22989747" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32804233" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -751,21 +747,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activity/ActivityInscriptions/ActivityInscriptionsList.tsx">
+    <entry file="file://$PROJECT_DIR$/src/components/Searchbar.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <folding>
-            <element signature="e#0#53#0" expanded="true" />
-          </folding>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Searchbar.tsx">
+    <entry file="file://$PROJECT_DIR$/src/scenes/Activities/Activity/ActivityInscriptions/ActivityInscriptionsList.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        <state relative-caret-position="380">
+          <caret line="93" column="83" selection-start-line="93" selection-start-column="83" selection-end-line="93" selection-end-column="83" />
           <folding>
-            <element signature="e#0#52#0" expanded="true" />
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>

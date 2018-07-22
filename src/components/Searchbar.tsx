@@ -15,6 +15,7 @@ const styles = () => ({
 
 interface IProps {
     placeholder?: string
+    onUpdateSearchTerm: (searchTerm: string) => void
 }
 
 class Searchbar extends React.Component<IProps & WithStyles<'toolbar' | 'underline'>> {
@@ -23,9 +24,11 @@ class Searchbar extends React.Component<IProps & WithStyles<'toolbar' | 'underli
     }
 
     public updateSearchTerm = (event) => {
+        const searchTerm = event.target.value
         this.setState({
-            searchTerm: event.target.value
+            searchTerm
         })
+        this.props.onUpdateSearchTerm(searchTerm)
     }
 
     public resetSearch = () => {
