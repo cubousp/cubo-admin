@@ -55,7 +55,7 @@ class Activity extends React.Component<WithStyles<'root' | 'loadingContainer' | 
 
         return (
             <div className={classes.root}>
-                <AppBar position='static' color='default'>
+                <AppBar position='static' color='default' elevation={2}>
                     <Tabs
                         value={this.state.value}
                         onChange={this.handleChange}

@@ -5,6 +5,7 @@ import List from '@material-ui/core/List'
 import Portal from '@material-ui/core/Portal/Portal'
 import { withStyles } from '@material-ui/core/styles'
 import * as React from 'react'
+import Searchbar from '../../../../components/Searchbar'
 import Snackbar from '../../../../components/Snackbar'
 import ActivityInscriptionsListCard from './ActivityInscriptionsListCard'
 
@@ -12,7 +13,7 @@ const styles = (theme: Theme) => ({
     root: {
         backgroundColor: theme.palette.background.paper,
         width: 'calc(100% - 300px)',
-        marginTop: 4,
+        marginTop: 1,
         overflowY: 'auto' as any,
     },
 })
@@ -44,6 +45,7 @@ class ActivityInscriptionsList extends React.Component<IProps & WithStyles<'root
         const { classes, inscriptions  } = this.props
         return (
             <div className={classes.root}>
+                <Searchbar placeholder={'Pesquisar'}/>
                 <List>
                     {
                         inscriptions.map((inscription: any) =>
