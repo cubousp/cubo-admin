@@ -78,6 +78,15 @@ class ActivityInscriptions extends React.Component<IProps> {
         })
     }
 
+    public orderInscriptionsByName = () => {
+        const newArray = this.props.activity.enrolled.map(a => ({...a}))
+        return newArray.sort(({ participant: { name: a }}, { participant: { name: b} }) => {
+            if (a < b ) { return -1 }
+            if (a > b ) { return 1 }
+            return 0
+        })
+    }
+
     public render() {
         const { activity, container, activeTab } = this.props
         if (activeTab !== TABS.INSCRIPTIONS) {
@@ -86,7 +95,7 @@ class ActivityInscriptions extends React.Component<IProps> {
         return (
             <div style={{ minHeight: 'calc(100vh - 116px)' }}>
                 <ActivityInscriptionsList
-                    inscriptions={activity.enrolled}
+                    inscriptions={this.orderInscriptionsByName()}
                 />
                 <Portal container={container}>
                     <div>
