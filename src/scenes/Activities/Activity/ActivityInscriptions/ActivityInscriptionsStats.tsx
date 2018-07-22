@@ -9,7 +9,7 @@ const styles = ({
         width: 300,
         padding: '32px 16px',
         position: 'absolute' as any,
-        height: 'calc(100vh - 184px)'
+        paddingTop: 128
     },
     dot: {
         height: 12,
@@ -21,12 +21,11 @@ const styles = ({
 })
 
 interface IProps {
-    attended: number,
-    missed:  number,
-    confirmed: number
+    available: number,
+    enrolled:  number
 }
 
-const ActivityAttendanceStats = withStyles(styles)<IProps>(({ classes, attended, missed, confirmed }) => (
+const ActivityInscriptionsStats = withStyles(styles)<IProps>(({ classes, available, enrolled  }) => (
     <div>
         <Drawer
             variant='permanent'
@@ -40,12 +39,12 @@ const ActivityAttendanceStats = withStyles(styles)<IProps>(({ classes, attended,
             <div>
                 <Typography variant={'headline'}>Estatísticas</Typography>
                 {
-                    (!attended && !missed && !confirmed) ? <div style={{ marginTop: 32 }}>Nenhuma estatística para mostrar :( </div> :
+                    (!available && !enrolled) ? <div style={{ marginTop: 32 }}>Nenhuma estatística para mostrar :( </div> :
                         <div>
                             <PieChart width={300} height={300}>
                                 <Pie
                                     dataKey='value'
-                                    data={[{ name: 'Presentes', value: attended || 0}, { name: 'Faltantes', value: missed || 0 }, { name: 'Aguardando', value: confirmed || 0 }]}
+                                    data={[{ name: 'Vagas disponíveis', value: available || 0}, { name: 'Vagas preenchidas', value: enrolled || 0 }]}
                                     cx={150}
                                     cy={160}
                                     outerRadius={80}
@@ -54,22 +53,17 @@ const ActivityAttendanceStats = withStyles(styles)<IProps>(({ classes, attended,
                                 >
                                     <Cell fill={'#4CAF50'}/>
                                     <Cell fill={'#F44336'}/>
-                                    <Cell fill={'#FFEB3B'}/>
                                 </Pie>
                                 <Tooltip/>
                             </PieChart>
                             <div style={{ marginLeft: 16 }}>
                                 <div style={{ display: 'flex', alignItems: 'center'}}>
                                     <div className={classes.dot} style={{ backgroundColor: '#4CAF50' }}/>
-                                    <Typography variant={'body1'} >Presentes: {attended}</Typography>
+                                    <Typography variant={'body1'} >Vagas disponíveis: {available}</Typography>
                                 </div>
                                 <div style={{ display: 'flex', alignItems: 'center', marginTop: 8}}>
                                     <div className={classes.dot} style={{ backgroundColor: '#F44336'}}/>
-                                    <Typography variant={'body1'}>Faltantes: {missed}</Typography>
-                                </div>
-                                <div style={{ display: 'flex', alignItems: 'center', marginTop: 8}}>
-                                    <div className={classes.dot} style={{ backgroundColor: '#FFEB3B'}}/>
-                                    <Typography variant={'body1'}>Aguardando: {confirmed}</Typography>
+                                    <Typography variant={'body1'}>Vagas preenchidas: {enrolled}</Typography>
                                 </div>
                             </div>
                         </div>
@@ -79,4 +73,4 @@ const ActivityAttendanceStats = withStyles(styles)<IProps>(({ classes, attended,
     </div>
 ))
 
-export default ActivityAttendanceStats
+export default ActivityInscriptionsStats

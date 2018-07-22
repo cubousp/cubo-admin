@@ -1,9 +1,13 @@
+import Portal from '@material-ui/core/Portal/Portal'
 import * as React from 'react'
+import { TABS } from '../Activity'
 import ActivityAttendanceList from './ActivityAttendanceList'
 import ActivityAttendanceStats from './ActivityAttendanceStats'
 
 interface IProps {
-    activity
+    activity,
+    container,
+    activeTab: TABS
 }
 
 class ActivityAttendance extends React.Component<IProps> {
@@ -19,13 +23,22 @@ class ActivityAttendance extends React.Component<IProps> {
         return this.props.activity.enrolled.filter((inscription) => inscription.status === status).length
     }
     public render() {
-        const { activity } = this.props
+        const { activity, container, activeTab } = this.props
+        if (activeTab !== TABS.ATTENDANCE) {
+            return null
+        }
         return (
-            <div style={{ position: 'relative', height: 'calc(100vh - 116px)', overflowY: 'hidden', marginTop: 4 }}>
+            <div style={{ minHeight: 'calc(100vh - 116px)', overflowY: 'hidden', marginTop: 4 }}>
                 <ActivityAttendanceList
                     inscriptions={activity.enrolled}
                 />
-                <ActivityAttendanceStats attended={this.getCountByStatus('ATTENDED')} missed={this.getCountByStatus('MISSED')} confirmed={this.getCountByStatus('CONFIRMED')} />
+                <Portal container={container}>
+                    <ActivityAttendanceStats
+                        attended={this.getCountByStatus('ATTENDED')}
+                        missed={this.getCountByStatus('MISSED')}
+                        confirmed={this.getCountByStatus('CONFIRMED')}
+                    />
+                </Portal>
             </div>
         )
     }

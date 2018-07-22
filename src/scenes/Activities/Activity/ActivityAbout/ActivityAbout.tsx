@@ -1,14 +1,16 @@
 import Button from '@material-ui/core/Button/Button'
 import Fade from '@material-ui/core/Fade/Fade'
+import Portal from '@material-ui/core/Portal/Portal'
 import { WithStyles, withStyles } from '@material-ui/core/styles'
 import Zoom from '@material-ui/core/Zoom/Zoom'
 import { Edit } from '@material-ui/icons'
 import * as React from 'react'
 import Mutation from 'react-apollo/Mutation'
-import BottomActionBar from '../../components/BottomActionBar'
-import Snackbar from '../../components/Snackbar'
-import { UPDATE_ACTIVITY } from '../../repositories/activities'
-import ActivityForm from './ActivityForm'
+import BottomActionBar from '../../../../components/BottomActionBar'
+import Snackbar from '../../../../components/Snackbar'
+import { UPDATE_ACTIVITY } from '../../../../repositories/activities'
+import ActivityForm from '../../ActivityForm'
+import { TABS } from '../Activity'
 
 const styles = () => ({
     container: {
@@ -19,16 +21,26 @@ const styles = () => ({
         left: 0 as any,
         right: 0 as any,
         bottom: 0 as any,
-    }
+    },
 })
 
 interface IProps {
     activity: any
+    container: any
+    activeTab: TABS
 }
 
 class ActivityAbout extends React.Component<IProps & WithStyles<'container' | 'bottomActionBar'>> {
     public state = {
-        activity: Object.assign({}, { ...this.props.activity, startsAt: new Date(this.props.activity.startsAt), endsAt: new Date(this.props.activity.endsAt), inscriptionBeginsAt: new Date(this.props.activity.inscriptionBeginsAt), inscriptionEndsAt: new Date(this.props.activity.inscriptionEndsAt), speakerName: this.props.activity.speaker && this.props.activity.speaker.name, speakerDescription: this.props.activity.speaker && this.props.activity.speaker.description }),
+        activity: Object.assign({}, {
+            ...this.props.activity,
+            startsAt: new Date(this.props.activity.startsAt),
+            endsAt: new Date(this.props.activity.endsAt),
+            inscriptionBeginsAt: new Date(this.props.activity.inscriptionBeginsAt),
+            inscriptionEndsAt: new Date(this.props.activity.inscriptionEndsAt),
+            speakerName: this.props.activity.speaker && this.props.activity.speaker.name,
+            speakerDescription: this.props.activity.speaker && this.props.activity.speaker.description,
+        }),
         showError: false,
         savingActivity: false,
         resetForm: false,
@@ -84,12 +96,12 @@ class ActivityAbout extends React.Component<IProps & WithStyles<'container' | 'b
         })
     }
 
-    public handleSaveClick = (updateActivity) => async() => {
+    public handleSaveClick = (updateActivity) => async () => {
         try {
             await updateActivity()
             this.setState({
                 disableEdition: true,
-                openSnackbar: true
+                openSnackbar: true,
             })
         } catch (err) {
             console.log('err', err)
@@ -98,15 +110,28 @@ class ActivityAbout extends React.Component<IProps & WithStyles<'container' | 'b
 
     public handleCancelClick = () => {
         this.setState({
-            activity: Object.assign({}, { ...this.props.activity, startsAt: new Date(this.props.activity.startsAt), endsAt: new Date(this.props.activity.endsAt), inscriptionBeginsAt: new Date(this.props.activity.inscriptionBeginsAt), inscriptionEndsAt: new Date(this.props.activity.inscriptionEndsAt), speakerName: this.props.activity.speaker && this.props.activity.speaker.name, speakerDescription: this.props.activity.speaker && this.props.activity.speaker.description, totalVacancies: this.props.activity.vacancies.total }),
+            activity: Object.assign({}, {
+                ...this.props.activity,
+                startsAt: new Date(this.props.activity.startsAt),
+                endsAt: new Date(this.props.activity.endsAt),
+                inscriptionBeginsAt: new Date(this.props.activity.inscriptionBeginsAt),
+                inscriptionEndsAt: new Date(this.props.activity.inscriptionEndsAt),
+                speakerName: this.props.activity.speaker && this.props.activity.speaker.name,
+                speakerDescription: this.props.activity.speaker && this.props.activity.speaker.description,
+                totalVacancies: this.props.activity.vacancies.total,
+            }),
             disableEdition: true,
         })
     }
 
     public render() {
-        const {classes} = this.props
+        const { classes, activeTab} = this.props
+        if (activeTab !== TABS.ABOUT) {
+            return null
+        }
         return (
-            <Mutation mutation={UPDATE_ACTIVITY} variables={{ id: this.props.activity.id, input: this.mapToInput(this.state.activity)}}>
+            <Mutation mutation={UPDATE_ACTIVITY}
+                      variables={{id: this.props.activity.id, input: this.mapToInput(this.state.activity)}}>
                 {(updateActivity) => {
                     return (
                         <div className={classes.container}>
@@ -120,31 +145,35 @@ class ActivityAbout extends React.Component<IProps & WithStyles<'container' | 'b
                                 activityModel={this.state.activity}
                                 validState={this.state.activity.title !== undefined && this.state.activity.title.trim().length !== 0}
                             />
-                            <Zoom in={this.state.disableEdition}>
-                                <Button
-                                    variant='fab'
-                                    color='secondary'
-                                    aria-label='add'
-                                    style={{position: 'absolute', bottom: 64, right: 64}}
-                                    onClick={this.handleEditClick}
-                                >
-                                    <Edit/>
-                                </Button>
-                            </Zoom>
-                            <Fade in={!this.state.disableEdition}>
-                                <div className={classes.bottomActionBar}>
-                                    <BottomActionBar
-                                        onSaveClick={this.handleSaveClick(updateActivity)}
-                                        onCancelClick={this.handleCancelClick}
+                            <Portal container={this.props.container}>
+                                <div>
+                                    <Zoom in={this.state.disableEdition}>
+                                        <Button
+                                            variant='fab'
+                                            color='secondary'
+                                            aria-label='add'
+                                            style={{position: 'absolute', bottom: 64, right: 64}}
+                                            onClick={this.handleEditClick}
+                                        >
+                                            <Edit/>
+                                        </Button>
+                                    </Zoom>
+                                    <Fade in={!this.state.disableEdition}>
+                                        <div className={classes.bottomActionBar}>
+                                            <BottomActionBar
+                                                onSaveClick={this.handleSaveClick(updateActivity)}
+                                                onCancelClick={this.handleCancelClick}
+                                            />
+                                        </div>
+                                    </Fade>
+                                    <Snackbar
+                                        open={this.state.openSnackbar}
+                                        onClose={this.handleCloseSnackbar}
+                                        message={'Atividade atualizada com sucesso'}
+                                        variant={'success'}
                                     />
                                 </div>
-                            </Fade>
-                            <Snackbar
-                                open={this.state.openSnackbar}
-                                onClose={this.handleCloseSnackbar}
-                                message={'Atividade atualizada com sucesso'}
-                                variant={'success'}
-                            />
+                            </Portal>
                         </div>
                     )
                 }}
@@ -154,7 +183,7 @@ class ActivityAbout extends React.Component<IProps & WithStyles<'container' | 'b
 
     public handleCloseSnackbar = () => {
         this.setState({
-            openSnackbar: false
+            openSnackbar: false,
         })
     }
 
@@ -164,7 +193,7 @@ class ActivityAbout extends React.Component<IProps & WithStyles<'container' | 'b
         speakerDescription: undefined,
         speaker: activity.speakerName ? {
             name: activity.speakerName,
-            description: activity.speakerDescription
+            description: activity.speakerDescription,
         } : undefined,
         startsAt: activity.startsAt && activity.startsAt.toISOString(),
         endsAt: activity.endsAt && activity.endsAt.toISOString(),

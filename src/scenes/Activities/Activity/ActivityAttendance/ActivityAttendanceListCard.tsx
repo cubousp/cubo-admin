@@ -8,7 +8,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import { Check, Close, IndeterminateCheckBox } from '@material-ui/icons'
 import * as React from 'react'
 import Mutation from 'react-apollo/Mutation'
-import { UPDATE_INSCRIPTION_STATUS } from '../../../repositories/participants'
+import { UPDATE_INSCRIPTION_STATUS } from '../../../../repositories/participants'
 
 const styles = (theme: Theme) => ({
     title: {
@@ -81,7 +81,7 @@ class ActivityAttendanceListCard extends React.Component<IProps & WithStyles<'ti
                 <Button
                     aria-label='add'
                     onClick={this.handleClick}
-                    style={{marginRight: 332, width: 160 }}
+                    style={{marginRight: 32, width: 160 }}
                     variant={'outlined'}
                 >
                     { STATUS_COMPONENT[inscription.status]}

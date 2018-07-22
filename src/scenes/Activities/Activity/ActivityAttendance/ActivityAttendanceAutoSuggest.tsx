@@ -6,8 +6,8 @@ import match from 'autosuggest-highlight/match'
 import parse from 'autosuggest-highlight/parse'
 import * as React from 'react'
 import Autosuggest from 'react-autosuggest'
-import { SEARCH_PARTICIPANT } from '../../../repositories/participants'
-import { client } from '../../../services/client'
+import { SEARCH_PARTICIPANT } from '../../../../repositories/participants'
+import { client } from '../../../../services/client'
 
 function renderInput(inputProps) {
     const { classes, ref, ...other } = inputProps
@@ -87,7 +87,7 @@ export interface IProps {
     participant
 }
 
-class ActivityInscriptionsAutoSuggest extends React.Component<IProps & WithStyles<'container' | 'suggestionsContainerOpen' | 'suggestion' | 'suggestionsList'>> {
+class ActivityAttendanceAutoSuggest extends React.Component<IProps & WithStyles<'container' | 'suggestionsContainerOpen' | 'suggestion' | 'suggestionsList'>> {
     public state = {
         suggestions: [] as Array<{ email: string, id: string }>,
     }
@@ -147,4 +147,4 @@ class ActivityInscriptionsAutoSuggest extends React.Component<IProps & WithStyle
     }
 }
 
-export default withStyles(styles)(ActivityInscriptionsAutoSuggest)
+export default withStyles(styles)(ActivityAttendanceAutoSuggest)

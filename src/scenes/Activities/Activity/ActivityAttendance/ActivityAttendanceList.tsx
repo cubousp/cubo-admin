@@ -2,15 +2,16 @@ import { Theme, WithStyles } from '@material-ui/core'
 import Divider from '@material-ui/core/Divider/Divider'
 import Typography from '@material-ui/core/es/Typography/Typography'
 import List from '@material-ui/core/List'
+import Portal from '@material-ui/core/Portal/Portal'
 import { withStyles } from '@material-ui/core/styles'
 import * as React from 'react'
-import Snackbar from '../../../components/Snackbar'
+import Snackbar from '../../../../components/Snackbar'
 import ActivityAttendanceListCard from './ActivityAttendanceListCard'
 
 const styles = (theme: Theme) => ({
     root: {
         backgroundColor: theme.palette.background.paper,
-        width: '100%',
+        width: 'calc(100% - 300px)',
         marginTop: 4,
         overflowY: 'auto' as any,
     },
@@ -65,13 +66,15 @@ class ActivityAttendanceList extends React.Component<IProps & WithStyles<'root'>
                         )
                     }
                 </List>
-                <Snackbar
-                    open={this.state.openSnackbar}
-                    onClose={this.handleCloseSnackbar}
-                    message={'Sucesso'}
-                    variant={'info'}
-                    absolute={true}
-                />
+                <Portal>
+                    <Snackbar
+                        open={this.state.openSnackbar}
+                        onClose={this.handleCloseSnackbar}
+                        message={'Status atualizado com sucesso'}
+                        variant={'info'}
+                        absolute={true}
+                    />
+                </Portal>
             </div>
         )
     }

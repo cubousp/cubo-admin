@@ -8,7 +8,7 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import { MoreVert } from '@material-ui/icons'
 import * as React from 'react'
 import Mutation from 'react-apollo/Mutation'
-import { DISENROLL_PARTICIPANT } from '../../../repositories/participants'
+import { DISENROLL_PARTICIPANT } from '../../../../repositories/participants'
 
 const styles = (theme: Theme) => ({
     title: {
@@ -47,7 +47,6 @@ class ActivityInscriptionsListCard extends React.Component<IProps & WithStyles<'
                 <Button
                     aria-label='add'
                     onClick={this.handleClick}
-                    style={{ marginRight: 300 }}
                 >
                     <MoreVert/>
                 </Button>

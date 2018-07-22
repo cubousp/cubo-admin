@@ -1,16 +1,20 @@
 import Button from '@material-ui/core/Button/Button'
+import Portal from '@material-ui/core/Portal/Portal'
 import { Add } from '@material-ui/icons'
 import * as React from 'react'
 import Mutation from 'react-apollo/Mutation'
-import Dialog from '../../../components/Dialog'
-import Snackbar from '../../../components/Snackbar'
-import { ENROLL_PARTICIPANT } from '../../../repositories/participants'
+import Dialog from '../../../../components/Dialog'
+import Snackbar from '../../../../components/Snackbar'
+import { ENROLL_PARTICIPANT } from '../../../../repositories/participants'
+import { TABS } from '../Activity'
 import ActivityInscriptionsAdd from './ActivityInscriptionsAdd'
 import ActivityInscriptionsList from './ActivityInscriptionsList'
 import ActivityInscriptionsStats from './ActivityInscriptionsStats'
 
 interface IProps {
     activity
+    container
+    activeTab: TABS
 }
 
 class ActivityInscriptions extends React.Component<IProps> {
@@ -75,22 +79,29 @@ class ActivityInscriptions extends React.Component<IProps> {
     }
 
     public render() {
-        const { activity } = this.props
+        const { activity, container, activeTab } = this.props
+        if (activeTab !== TABS.INSCRIPTIONS) {
+            return null
+        }
         return (
-            <div style={{ position: 'relative', height: 'calc(100vh - 116px)' }}>
+            <div style={{ minHeight: 'calc(100vh - 116px)' }}>
                 <ActivityInscriptionsList
                     inscriptions={activity.enrolled}
                 />
-                <ActivityInscriptionsStats available={activity.vacancies.available} enrolled={activity.vacancies.total - activity.vacancies.available} />
-                <Button
-                    variant='fab'
-                    color='secondary'
-                    aria-label='add'
-                    onClick={this.handleAddInscriptionClick}
-                    style={{ position: 'absolute', bottom: 64, right: 364 }}
-                >
-                    <Add/>
-                </Button>
+                <Portal container={container}>
+                    <div>
+                        <ActivityInscriptionsStats available={activity.vacancies.available} enrolled={activity.vacancies.total - activity.vacancies.available} />
+                        <Button
+                            variant='fab'
+                            color='secondary'
+                            aria-label='add'
+                            onClick={this.handleAddInscriptionClick}
+                            style={{ position: 'absolute', bottom: 64, right: 396 }}
+                        >
+                            <Add/>
+                        </Button>
+                    </div>
+                </Portal>
                 <Mutation mutation={ENROLL_PARTICIPANT} >
                     {(enrollParticipant) => (
                         <div>
@@ -108,13 +119,15 @@ class ActivityInscriptions extends React.Component<IProps> {
                                 title={'Não foi possível salvar a inscrição'}
                                 text={this.state.saveErrorMessage}
                             />
-                            <Snackbar
-                                open={this.state.openSnackbar}
-                                onClose={this.handleCloseSnackbar}
-                                message={'Participante inscrito com sucesso'}
-                                variant={'success'}
-                                absolute={true}
-                            />
+                            <Portal container={container}>
+                                <Snackbar
+                                    open={this.state.openSnackbar}
+                                    onClose={this.handleCloseSnackbar}
+                                    message={'Participante inscrito com sucesso'}
+                                    variant={'success'}
+                                    absolute={true}
+                                />
+                            </Portal>
                         </div>
                     )}
                 </Mutation>
