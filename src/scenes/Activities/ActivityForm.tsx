@@ -107,8 +107,8 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                         ampm={false}
                         className={classNames(classes.textField, classes.short)}
                         timeIcon={<AccessTime/>}
-                        minDate={new Date(2018, 8, 17)}
-                        maxDate={new Date(2018, 8, 19, 23, 59, 59)}
+                        minDate={new Date(2018, 8, 19)}
+                        maxDate={new Date(2018, 8, 21, 23, 59, 59)}
                         dateRangeIcon={<DateRange/>}
                         onChange={handleChangeDate('startsAt')}
                         leftArrowIcon={<ChevronLeft/>}
@@ -126,8 +126,8 @@ class ActivityForm extends React.Component<IProps & WithStyles<'container' | 'te
                         value={activityModel.endsAt}
                         className={classNames(classes.textField, classes.short)}
                         ampm={false}
-                        minDate={new Date(2018, 8, 17)}
-                        maxDate={new Date(2018, 8, 19, 23, 59, 59)}
+                        minDate={new Date(2018, 8, 19)}
+                        maxDate={new Date(2018, 8, 21, 23, 59, 59)}
                         timeIcon={<AccessTime/>}
                         dateRangeIcon={<DateRange/>}
                         keyboardIcon={<Event/>}

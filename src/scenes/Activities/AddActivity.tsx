@@ -34,8 +34,8 @@ const Transition = (props: any) => {
 
 const newActivity = {
     title: '',
-    startsAt: new Date(2018, 8, 17, 10, 0, 0, 0),
-    endsAt: new Date(2018, 8, 17, 11, 0, 0, 0),
+    startsAt: new Date(2018, 8, 19, 10, 0, 0, 0),
+    endsAt: new Date(2018, 8, 19, 11, 0, 0, 0),
     kind: 'LECTURE',
     shortDescription: undefined,
     longDescription: undefined,
