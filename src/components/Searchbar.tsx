@@ -9,7 +9,8 @@ import * as React from 'react'
 
 const styles = () => ({
     toolbar: {
-        padding: '0 24px'
+        paddingLeft: 24,
+        paddingRight: 48
     },
 })
 
