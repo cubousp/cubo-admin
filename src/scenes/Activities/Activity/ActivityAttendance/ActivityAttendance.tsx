@@ -22,15 +22,25 @@ class ActivityAttendance extends React.Component<IProps> {
     public getCountByStatus = (status) => {
         return this.props.activity.enrolled.filter((inscription) => inscription.status === status).length
     }
+
+    public orderInscriptionsByName = () => {
+        const newArray = this.props.activity.enrolled.map(a => ({...a}))
+        return newArray.sort(({ participant: { name: a }}, { participant: { name: b} }) => {
+            if (a < b ) { return -1 }
+            if (a > b ) { return 1 }
+            return 0
+        })
+    }
+
     public render() {
-        const { activity, container, activeTab } = this.props
+        const { container, activeTab } = this.props
         if (activeTab !== TABS.ATTENDANCE) {
             return null
         }
         return (
             <div style={{ minHeight: 'calc(100vh - 116px)', overflowY: 'hidden', marginTop: 4 }}>
                 <ActivityAttendanceList
-                    inscriptions={activity.enrolled}
+                    inscriptions={this.orderInscriptionsByName()}
                 />
                 <Portal container={container}>
                     <ActivityAttendanceStats
