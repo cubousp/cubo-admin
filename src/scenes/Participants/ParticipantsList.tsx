@@ -21,6 +21,7 @@ const styles = (theme: Theme) => ({
 
 interface IProps {
     participants: any[]
+    openSnackbar: boolean
 }
 
 class ParticipantsList extends React.Component<IProps & WithStyles<'root'>> {
@@ -32,14 +33,6 @@ class ParticipantsList extends React.Component<IProps & WithStyles<'root'>> {
     public handleCloseSnackbar = () => {
         this.setState({
             openSnackbar: false
-        })
-    }
-
-    public onRemove = async(removeActivity) => {
-        removeActivity().then(() => {
-            this.setState({
-                openSnackbar: true
-            })
         })
     }
 
@@ -71,7 +64,6 @@ class ParticipantsList extends React.Component<IProps & WithStyles<'root'>> {
                             <div key={participant.id}>
                                 <ParticipantsListCard
                                     participant={participant}
-                                    onRemove={this.onRemove}
                                 />
                                 <Divider/>
                             </div>
@@ -100,7 +92,7 @@ class ParticipantsList extends React.Component<IProps & WithStyles<'root'>> {
                     <Snackbar
                         open={this.state.openSnackbar}
                         onClose={this.handleCloseSnackbar}
-                        message={'Inscrição removida com sucesso'}
+                        message={'Usuário cadastrado com sucesso'}
                         variant={'success'}
                         absolute={true}
                     />

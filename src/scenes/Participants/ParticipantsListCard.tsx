@@ -13,7 +13,6 @@ const styles = (theme: Theme) => ({
 
 interface IProps {
     participant
-    onRemove: (removeInscription) => Promise<void>
 }
 
 class ParticipantsListCard extends React.Component<IProps & WithStyles<'title'>> {
