@@ -134,7 +134,6 @@ const AppDrawer = decorate<IProps>(({ classes, theme, open, onCloseClick }) => (
                             style={ item.disabled ?
                                 { ...disabledLink, textDecoration: 'none' } :
                                 { textDecoration: 'none' } }
-
                         >
                             <ListItem
                                 button={true}
