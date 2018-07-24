@@ -1,7 +1,6 @@
 import MenuItem from '@material-ui/core/MenuItem/MenuItem'
 import { Theme, WithStyles, withStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField/TextField'
-import Typography from '@material-ui/core/Typography/Typography'
 import * as classNames from 'classnames'
 import * as React from 'react'
 
@@ -72,7 +71,6 @@ class ParticipantSignUpForms extends React.Component<IProps & WithStyles<'contai
         const { classes, showError, handleChange, participantModel, validState, disabled, showHint = true } = this.props
         return (
             <form className={classes.container} noValidate={true} autoComplete='off'>
-                <Typography className={classes.moreOptions}>Informações básicas</Typography>
                 <TextField
                     style={{ marginTop: 15 }}
                     id='name'

@@ -83,7 +83,7 @@ class ParticipantsSignUp extends React.Component<IProps> {
                                 Cancelar
                             </Button>
                             <Button onClick={this.handleSave} color='primary'>
-                                Inscrever
+                                Cadastrar
                             </Button>
                         </DialogActions>
                 }
