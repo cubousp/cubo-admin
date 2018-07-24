@@ -18,7 +18,6 @@ export const drawerItems: IDrawerItem[] = [
         label: 'Feed',
         link: '/feed'
     }, {
-        disabled: true,
         icon: <People/>,
         label: 'Participantes',
         link: '/participants',
