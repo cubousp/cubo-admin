@@ -60,7 +60,7 @@ class Participants extends React.Component {
         return (
             <div>
                 <Query
-                    query = {PARTICIPANTS}>
+                    query = {PARTICIPANTS} variables={{limit: 1000}}>
                     {({loading, error, data}) => {
                         if (loading) { return <div style={{ height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><CircularProgress style={{ width: 56, height: 56}}/></div> }
                         if (error) { return `Error! ${error.message}` }
