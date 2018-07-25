@@ -82,10 +82,7 @@ class Participants extends React.Component {
         ...participant,
     })
 
-    public getParticipantCount = (participants: any[], kindFilter: ParticipantKind): number => {
-        return participants.filter(
-            ({ kind }) => kind === kindFilter).length
-    }
+
 
 
 
@@ -104,10 +101,8 @@ class Participants extends React.Component {
                                        participants = {data.participants.participants}
                                        openSnackbar = {this.state.openSnackbar}/>
                                 <ParticipantsStats 
-                                    fouspGraduating={this.getParticipantCount(data.participants.participants, ParticipantKind.fouspGraduating)} 
-                                    fouspPosGraduating={this.getParticipantCount(data.participants.participants, ParticipantKind.fouspPosGraduation)}
-                                    externalParticipants={this.getParticipantCount(data.participants.participants, ParticipantKind.externalParticipants)}
-                                    />
+                                    participants = {data.participants.participants}
+                                />
                             </div>
                         )
                         }}
@@ -155,10 +150,6 @@ class Participants extends React.Component {
     }
 }
 
-enum ParticipantKind {
-    fouspGraduating = 'GRADUATING_FOUSP',
-    fouspPosGraduation = 'POS_GRADUATING_FOUSP',
-    externalParticipants = 'EXTERNAL_PARTICIPANT',
-}
+
 
 export default Participants
