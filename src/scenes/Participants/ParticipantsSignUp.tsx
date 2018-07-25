@@ -47,14 +47,7 @@ class ParticipantsSignUp extends React.Component<IProps> {
         }
 
         this.state.newParticipant.authId = this.state.newParticipant.email
-
-        // this.setState({
-        //     newParticipant: {
-        //         ...this.state.newParticipant,
-        //         authId: this.state.newParticipant.email,
-        //     }
-        // })
-        console.log(this.state.newParticipant)
+        
         await this.props.handleSave(this.state.newParticipant)
         this.setState({
             newParticipant: {

@@ -2,11 +2,9 @@ import { Theme, WithStyles } from '@material-ui/core'
 import Divider from '@material-ui/core/Divider/Divider'
 import Typography from '@material-ui/core/es/Typography/Typography'
 import List from '@material-ui/core/List'
-import Portal from '@material-ui/core/Portal/Portal'
 import { withStyles } from '@material-ui/core/styles'
 import * as React from 'react'
 import Searchbar from '../../components/Searchbar'
-import Snackbar from '../../components/Snackbar'
 import ParticipantsListCard from './ParticipantsListCard'
 
 
@@ -88,15 +86,6 @@ class ParticipantsList extends React.Component<IProps & WithStyles<'root'>> {
                         )
                     }
                 </List>
-                <Portal>
-                    <Snackbar
-                        open={this.state.openSnackbar}
-                        onClose={this.handleCloseSnackbar}
-                        message={'Usuário cadastrado com sucesso'}
-                        variant={'success'}
-                        absolute={true}
-                    />
-                </Portal>
             </div>
         )
     }
