@@ -9,6 +9,7 @@ import Snackbar from '../../components/Snackbar'
 import { CREATE_PARTICIPANT, PARTICIPANTS } from '../../repositories/participants'
 import ParticipantsList from './ParticipantsList'
 import ParticipantsSignUp from './ParticipantsSignUp'
+import ParticipantsStats from './ParticipantsStats'
 
 class Participants extends React.Component {
     public state = {
@@ -81,6 +82,13 @@ class Participants extends React.Component {
         ...participant,
     })
 
+    public getParticipantCount = (participants: any[], kindFilter: ParticipantKind): number => {
+        return participants.filter(
+            ({ kind }) => kind === kindFilter).length
+    }
+
+
+
     public render() {
         return (
             <div>
@@ -95,18 +103,23 @@ class Participants extends React.Component {
                                <ParticipantsList
                                        participants = {data.participants.participants}
                                        openSnackbar = {this.state.openSnackbar}/>
-                                    <Button
-                                        variant='fab'
-                                        color='secondary'
-                                        aria-label='add'
-                                        style={{ position: 'absolute', bottom: 64, right: 64 }}
-                                        onClick={this.handleAddClick}>
-                                        <AddIcon/>
-                                    </Button>
+                                <ParticipantsStats 
+                                    fouspGraduating={this.getParticipantCount(data.participants.participants, ParticipantKind.fouspGraduating)} 
+                                    fouspPosGraduating={this.getParticipantCount(data.participants.participants, ParticipantKind.fouspPosGraduation)}
+                                    externalParticipants={this.getParticipantCount(data.participants.participants, ParticipantKind.externalParticipants)}
+                                    />
                             </div>
                         )
                         }}
                 </Query>
+                <Button
+                    variant='fab'
+                    color='secondary'
+                    aria-label='add'
+                    style={{ position: 'absolute', bottom: 64, right: 396}}
+                    onClick={this.handleAddClick}>
+                    <AddIcon/>
+                 </Button>
                 <Mutation mutation={CREATE_PARTICIPANT}>
                 {(createParticipant) => (
                     <div>
@@ -140,6 +153,12 @@ class Participants extends React.Component {
             </div>
         )
     }
+}
+
+enum ParticipantKind {
+    fouspGraduating = 'GRADUATING_FOUSP',
+    fouspPosGraduation = 'POS_GRADUATING_FOUSP',
+    externalParticipants = 'EXTERNAL_PARTICIPANT',
 }
 
 export default Participants
