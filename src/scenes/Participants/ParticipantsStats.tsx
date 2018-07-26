@@ -80,14 +80,15 @@ class ParticipantsStats extends React.Component<IProps & WithStyles<'drawerPaper
                                             fill='#8884d8'
                                             label={true}
                                         >
-                                            <Cell fill={'#4CAF50'}/>
+                                            <Cell fill={'#ED950B'}/>
                                             <Cell fill={'#F44336'}/>
+                                            <Cell fill={'#1012A3'}/>
                                         </Pie>
                                         <Tooltip/>
                                     </PieChart>
                                     <div style={{ marginLeft: 16 }}>
                                         <div style={{ display: 'flex', alignItems: 'center'}}>
-                                            <div className={classes.dot} style={{ backgroundColor: '#4CAF50' }}/>
+                                            <div className={classes.dot} style={{ backgroundColor: '#ED950B' }}/>
                                             <Typography variant={'body1'} >FOUSP - Graduação: {fouspGraduating}</Typography>
                                         </div>
                                         <div style={{ display: 'flex', alignItems: 'center', marginTop: 8}}>
@@ -95,7 +96,7 @@ class ParticipantsStats extends React.Component<IProps & WithStyles<'drawerPaper
                                             <Typography variant={'body1'}>FOUSP - Pós-graduação: {fouspPosGraduating}</Typography>
                                         </div>
                                         <div style={{ display: 'flex', alignItems: 'center', marginTop: 8}}>
-                                            <div className={classes.dot} style={{ backgroundColor: '#F44336'}}/>
+                                            <div className={classes.dot} style={{ backgroundColor: '#1012A3'}}/>
                                             <Typography variant={'body1'}>Participantes Externos: {externalParticipants}</Typography>
                                         </div>
                                     </div>

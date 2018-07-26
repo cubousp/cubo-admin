@@ -70,6 +70,7 @@ class Participants extends React.Component {
             const saveErrorMessage = 'Houve um erro inesperado. Tente novamente mais tarde.'
             this.setState({
                 showSaveError: true,
+                openParticipantSignUpDialog: false,
                 saveErrorMessage,
             })
         }
@@ -90,7 +91,9 @@ class Participants extends React.Component {
         return (
             <div>
                 <Query
-                    query = {PARTICIPANTS} variables={{limit: 1000}}>
+                    query = {PARTICIPANTS} variables={{limit: 1000}}
+                    pollInterval={500}
+                    >
                     {({loading, error, data}) => {
                         if (loading) { return <div style={{ height: 400, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><CircularProgress style={{ width: 56, height: 56}}/></div> }
                         if (error) { return `Error! ${error.message}` }
@@ -129,7 +132,7 @@ class Participants extends React.Component {
                             isLoading={false}
                             onConfirm={this.closeErrorDialog}
                             disableCancelButton={true}
-                            title={'Não foi possível salvar a inscrição'}
+                            title={'Não foi possível cadastrar o usuário'}
                             text={this.state.saveErrorMessage}
                         />
                         <Portal>
