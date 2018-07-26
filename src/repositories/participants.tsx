@@ -14,7 +14,19 @@ export const PARTICIPANTS = gql`
             participants{
                 name
                 email
+                kind
             }
+        }
+    }
+`
+
+export const CREATE_PARTICIPANT = gql`
+    mutation createParticipant($input: CreateParticipantInput!){
+        createParticipant(input: $input) {
+            id
+            name
+            email
+            kind
         }
     }
 `

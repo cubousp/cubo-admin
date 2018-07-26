@@ -2,11 +2,9 @@ import { Theme, WithStyles } from '@material-ui/core'
 import Divider from '@material-ui/core/Divider/Divider'
 import Typography from '@material-ui/core/es/Typography/Typography'
 import List from '@material-ui/core/List'
-import Portal from '@material-ui/core/Portal/Portal'
 import { withStyles } from '@material-ui/core/styles'
 import * as React from 'react'
 import Searchbar from '../../components/Searchbar'
-import Snackbar from '../../components/Snackbar'
 import ParticipantsListCard from './ParticipantsListCard'
 
 
@@ -21,6 +19,7 @@ const styles = (theme: Theme) => ({
 
 interface IProps {
     participants: any[]
+    openSnackbar: boolean
 }
 
 class ParticipantsList extends React.Component<IProps & WithStyles<'root'>> {
@@ -32,14 +31,6 @@ class ParticipantsList extends React.Component<IProps & WithStyles<'root'>> {
     public handleCloseSnackbar = () => {
         this.setState({
             openSnackbar: false
-        })
-    }
-
-    public onRemove = async(removeActivity) => {
-        removeActivity().then(() => {
-            this.setState({
-                openSnackbar: true
-            })
         })
     }
 
@@ -71,7 +62,6 @@ class ParticipantsList extends React.Component<IProps & WithStyles<'root'>> {
                             <div key={participant.id}>
                                 <ParticipantsListCard
                                     participant={participant}
-                                    onRemove={this.onRemove}
                                 />
                                 <Divider/>
                             </div>
@@ -96,15 +86,6 @@ class ParticipantsList extends React.Component<IProps & WithStyles<'root'>> {
                         )
                     }
                 </List>
-                <Portal>
-                    <Snackbar
-                        open={this.state.openSnackbar}
-                        onClose={this.handleCloseSnackbar}
-                        message={'Inscrição removida com sucesso'}
-                        variant={'success'}
-                        absolute={true}
-                    />
-                </Portal>
             </div>
         )
     }

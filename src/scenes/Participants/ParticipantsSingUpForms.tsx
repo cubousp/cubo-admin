@@ -44,9 +44,9 @@ const styles = (theme: Theme) => ({
 
 
 const mapKind = {
-    'GRADUATING-FOUSP': 'FOUSP - Graduando',
-    'POS-GRADUATING-FOUSP': 'FOUSP - Pós-Graduando',
-    'EXTERNAL-PARTICIPANT': 'Participante Externo',
+    'GRADUATING_FOUSP': 'FOUSP - Graduando',
+    'POS_GRADUATING_FOUSP': 'FOUSP - Pós-Graduando',
+    'EXTERNAL_PARTICIPANT': 'Participante Externo',
 }
 
 const kinds = Object.keys(mapKind).map((key) => ({label: mapKind[key], value: key}))

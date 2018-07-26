@@ -22,6 +22,7 @@ class ParticipantsSignUp extends React.Component<IProps> {
             name: '',
             email: '',
             kind: '',
+            authId: '',
         },
         lastInvalidErrorEmail: undefined,
         showError: false
@@ -41,17 +42,20 @@ class ParticipantsSignUp extends React.Component<IProps> {
     }
 
     public handleSave = async () => {
-        if (!this.state.newParticipant.id) {
-            this.setState({
-                lastInvalidErrorEmail: this.state.newParticipant.email,
-            })
+        if (!this.state.newParticipant.email) {
             return
         }
+
+        this.state.newParticipant.authId = this.state.newParticipant.email
+        
         await this.props.handleSave(this.state.newParticipant)
         this.setState({
             newParticipant: {
+                id: undefined,                
+                name: '',
                 email: '',
-                id: undefined
+                kind: '',
+                authId: '',
             }
         })
     }
