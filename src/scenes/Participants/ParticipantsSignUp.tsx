@@ -22,7 +22,6 @@ class ParticipantsSignUp extends React.Component<IProps> {
             name: '',
             email: '',
             kind: '',
-            authId: '',
         },
         lastInvalidErrorEmail: undefined,
         showError: false
@@ -46,8 +45,6 @@ class ParticipantsSignUp extends React.Component<IProps> {
             return
         }
 
-        this.state.newParticipant.authId = this.state.newParticipant.email
-        
         await this.props.handleSave(this.state.newParticipant)
         this.setState({
             newParticipant: {
@@ -55,7 +52,6 @@ class ParticipantsSignUp extends React.Component<IProps> {
                 name: '',
                 email: '',
                 kind: '',
-                authId: '',
             }
         })
     }

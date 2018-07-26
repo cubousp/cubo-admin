@@ -58,6 +58,7 @@ class Participants extends React.Component {
             this.setState({
                 savingActivity: true
             })
+            console.log('newParticipant', newParticipant)
             await createParticipant({ variables: { input: this.mapToInput(newParticipant) } })
 
             this.setState({
