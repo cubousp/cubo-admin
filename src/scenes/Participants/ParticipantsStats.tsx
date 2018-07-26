@@ -99,6 +99,9 @@ class ParticipantsStats extends React.Component<IProps & WithStyles<'drawerPaper
                                             <div className={classes.dot} style={{ backgroundColor: '#1012A3'}}/>
                                             <Typography variant={'body1'}>Participantes Externos: {externalParticipants}</Typography>
                                         </div>
+                                        <div style={{ display: 'flex', alignItems: 'center', marginTop: 8}}>
+                                            <Typography variant={'body1'}>Total: {fouspGraduating + fouspPosGraduating + externalParticipants}</Typography>
+                                        </div>
                                     </div>
                                 </div>
                         }

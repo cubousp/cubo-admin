@@ -12,6 +12,7 @@ const styles = (theme: Theme) => ({
     root: {
         backgroundColor: theme.palette.background.paper,
         width: 'calc(100% - 300px)',
+        minHeight: 'calc(100vh - 64px)',
         marginTop: 1,
         overflowY: 'auto' as any,
     },
