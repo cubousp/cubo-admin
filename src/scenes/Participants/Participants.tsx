@@ -9,6 +9,7 @@ import Snackbar from '../../components/Snackbar'
 import { CREATE_PARTICIPANT, PARTICIPANTS } from '../../repositories/participants'
 import ParticipantsList from './ParticipantsList'
 import ParticipantsSignUp from './ParticipantsSignUp'
+import ParticipantsStats from './ParticipantsStats'
 
 class Participants extends React.Component {
     public state = {
@@ -81,6 +82,10 @@ class Participants extends React.Component {
         ...participant,
     })
 
+
+
+
+
     public render() {
         return (
             <div>
@@ -95,18 +100,21 @@ class Participants extends React.Component {
                                <ParticipantsList
                                        participants = {data.participants.participants}
                                        openSnackbar = {this.state.openSnackbar}/>
-                                    <Button
-                                        variant='fab'
-                                        color='secondary'
-                                        aria-label='add'
-                                        style={{ position: 'absolute', bottom: 64, right: 64 }}
-                                        onClick={this.handleAddClick}>
-                                        <AddIcon/>
-                                    </Button>
+                                <ParticipantsStats 
+                                    participants = {data.participants.participants}
+                                />
                             </div>
                         )
                         }}
                 </Query>
+                <Button
+                    variant='fab'
+                    color='secondary'
+                    aria-label='add'
+                    style={{ position: 'absolute', bottom: 64, right: 396}}
+                    onClick={this.handleAddClick}>
+                    <AddIcon/>
+                 </Button>
                 <Mutation mutation={CREATE_PARTICIPANT}>
                 {(createParticipant) => (
                     <div>
@@ -141,5 +149,7 @@ class Participants extends React.Component {
         )
     }
 }
+
+
 
 export default Participants
