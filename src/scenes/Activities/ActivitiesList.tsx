@@ -2,6 +2,7 @@ import { Theme } from '@material-ui/core'
 import List from '@material-ui/core/List'
 import ListSubheader from '@material-ui/core/ListSubheader'
 import { withStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography/Typography'
 import * as React from 'react'
 import ActivitiesListCard from './ActivitiesListCard'
 
@@ -25,10 +26,19 @@ const ActivitiesList = withStyles(styles)<IProps>(({ classes, activities  }) => 
                         <div key={group.date.toString()}>
                             <ListSubheader>{group.date.toLocaleString('pt-BR').split(' ')[0]}</ListSubheader>
                             {
-                                group.activities.map((activity: any) => <ActivitiesListCard activity={activity} key={activity.id}/>)
+                                activities.length && group.activities.map((activity: any) => <ActivitiesListCard activity={activity} key={activity.id}/>)
                             }
                     </div>
                     ))
+                }
+                {
+                    activities.length === 0 && (
+                        <div style={{ textAlign: 'center', width: '100%', marginTop: 300 }}>
+                            <Typography variant={'subheading'} color={'primary'}>
+                                Nenhuma atividade cadastrada :(
+                            </Typography>
+                        </div>
+                    )
                 }
             </List>
         </div>
