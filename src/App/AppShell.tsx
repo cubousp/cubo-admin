@@ -1,9 +1,10 @@
+/* tslint:disable member-ordering */
 import { WithStyles, withStyles } from '@material-ui/core/styles'
 import * as React from 'react'
 import AppBar from './AppBar'
 import AppContent from './AppContent'
 import AppDrawer from './AppDrawer/AppDrawer'
-import { pagesTitle } from './pagesTitle'
+import AppTitleContext from './AppTitleContext'
 
 const decorate = withStyles(() => ({
     appShell: {
@@ -12,14 +13,27 @@ const decorate = withStyles(() => ({
         height: '100vh',
         overflow: 'hidden',
         position: 'relative' as 'relative',
-        zIndex: 1
+        zIndex: 1,
     },
 }))
 
 const AppShell = decorate(
     class extends React.Component<WithStyles<'appShell'>> {
+        public updateTitle = (newTitle: string) => {
+            this.setState({
+                appTitle: {
+                    ...this.state.appTitle,
+                    title: newTitle,
+                }
+            })
+        }
+
         public state = {
             open: true,
+            appTitle: {
+                title: '',
+                updateTitle: this.updateTitle
+            }
         }
 
         public handleDrawerOpen = () => {
@@ -34,30 +48,24 @@ const AppShell = decorate(
             const { classes } = this.props
 
             return (
-                <div className={classes.appShell}>
-                    <AppBar
-                        open={this.state.open}
-                        onMenuClick={this.handleDrawerOpen}
-                        title={this.getTitleFromLocation()}
-                    />
-                    <AppDrawer
-                        open={this.state.open}
-                        onCloseClick={this.handleDrawerClose}
-                    />
-                    <AppContent>
-                        {this.props.children}
-                    </AppContent>
-                </div>
+                <AppTitleContext.Provider value={this.state.appTitle as any}>
+                    <div className={classes.appShell}>
+                        <AppBar
+                            open={this.state.open}
+                            onMenuClick={this.handleDrawerOpen}
+                        />
+                        <AppDrawer
+                            open={this.state.open}
+                            onCloseClick={this.handleDrawerClose}
+                        />
+                        <AppContent>
+                            {this.props.children}
+                        </AppContent>
+                    </div>
+                </AppTitleContext.Provider>
             )
         }
-
-        private getTitleFromLocation() {
-            const found = pagesTitle.find((pageTitle) => {
-                return (this.props as any).location.pathname.match(pageTitle.pattern) !== null
-            })
-            return found ? found.title : ''
-        }
-    }
+    },
 )
 
 export default AppShell

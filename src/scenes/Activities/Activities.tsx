@@ -4,6 +4,8 @@ import AddIcon from '@material-ui/icons/Add'
 import * as React from 'react'
 import Mutation from 'react-apollo/Mutation'
 import Query from 'react-apollo/Query'
+import AppTitleContext from '../../App/AppTitleContext'
+import UpdateAppTitle from '../../App/UpdateAppTitle'
 import Snackbar from '../../components/Snackbar'
 import { CREATE_ACTIVITY, GET_ACTIVITIES } from '../../repositories/activities'
 import ActivitiesList from './ActivitiesList'
@@ -26,20 +28,20 @@ class Activities extends React.Component {
 
     public handleAddClick = () => {
         this.setState({
-            openAddActivityDialog: true
+            openAddActivityDialog: true,
         })
     }
 
     public handleCloseAddDialog = () => {
         this.setState({
-            openAddActivityDialog: false
+            openAddActivityDialog: false,
         })
     }
 
     public handleSaveNewActivity = async(createActivity: any, newActivity: any) => {
         try {
             this.setState({
-                savingActivity: true
+                savingActivity: true,
             })
             await createActivity({ variables: { newActivity: this.mapToInput(newActivity) } })
             this.setState({
@@ -51,13 +53,13 @@ class Activities extends React.Component {
             console.log('err', err)
         }
         this.setState({
-            savingActivity: false
+            savingActivity: false,
         })
     }
 
     public handleResetForm = () => {
         this.setState({
-            resetForm: false
+            resetForm: false,
         })
     }
 
@@ -67,17 +69,17 @@ class Activities extends React.Component {
         speakerDescription: undefined,
         speaker: newActivity.speakerName ? {
             name: newActivity.speakerName,
-            description: newActivity.speakerDescription
+            description: newActivity.speakerDescription,
         } : undefined,
         startsAt: newActivity.startsAt.toISOString(),
         endsAt: newActivity.endsAt.toISOString(),
         inscriptionBeginsAt: newActivity.inscriptionBeginsAt && newActivity.inscriptionBeginsAt.toISOString(),
-        inscriptionEndsAt: newActivity.inscriptionEndsAt && newActivity.inscriptionEndsAt.toISOString()
+        inscriptionEndsAt: newActivity.inscriptionEndsAt && newActivity.inscriptionEndsAt.toISOString(),
     })
 
     public handleCloseSnackbar = () => {
         this.setState({
-            openSnackbar: false
+            openSnackbar: false,
         })
     }
 
@@ -127,6 +129,9 @@ class Activities extends React.Component {
                         </div>
                     )}
                 </Mutation>
+                <AppTitleContext.Consumer>
+                    { ({ updateTitle }) => <UpdateAppTitle title={'Atividades'} updateTitle={updateTitle}/> }
+                </AppTitleContext.Consumer>
             </div>
         )
     }

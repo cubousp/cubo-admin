@@ -4,6 +4,8 @@ import * as React from 'react'
 import Mutation from 'react-apollo/Mutation'
 import { CircularProgress, Portal } from '../../../node_modules/@material-ui/core'
 import Query from '../../../node_modules/react-apollo/Query'
+import AppTitleContext from '../../App/AppTitleContext'
+import UpdateAppTitle from '../../App/UpdateAppTitle'
 import Dialog from '../../components/Dialog'
 import Snackbar from '../../components/Snackbar'
 import { CREATE_PARTICIPANT, PARTICIPANTS } from '../../repositories/participants'
@@ -37,26 +39,26 @@ class Participants extends React.Component {
 
     public handleCloseAddDialog = () => {
         this.setState({
-            openParticipantSignUpDialog: false
+            openParticipantSignUpDialog: false,
         })
     }
 
     public handleResetForm = () => {
         this.setState({
-            resetForm: false
+            resetForm: false,
         })
     }
 
     public handleAddClick = () => {
         this.setState({
-            openParticipantSignUpDialog: true
+            openParticipantSignUpDialog: true,
         })
     }
 
     public handleSaveNewParticipant = async(createParticipant: any, newParticipant: any) => {
         try {
             this.setState({
-                savingActivity: true
+                savingActivity: true,
             })
             console.log('newParticipant', newParticipant)
             await createParticipant({ variables: { input: this.mapToInput(newParticipant) } })
@@ -76,7 +78,7 @@ class Participants extends React.Component {
             })
         }
         this.setState({
-            savingActivity: false
+            savingActivity: false,
         })
     }
 
@@ -148,7 +150,9 @@ class Participants extends React.Component {
                     </div>
                 )}
                 </Mutation>
-
+                <AppTitleContext.Consumer>
+                    { ({ updateTitle }) => <UpdateAppTitle title={'Participantes'} updateTitle={updateTitle}/> }
+                </AppTitleContext.Consumer>
             </div>
         )
     }

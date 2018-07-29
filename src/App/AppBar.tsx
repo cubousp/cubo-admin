@@ -9,6 +9,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 import * as classNames from 'classnames'
 import * as React from 'react'
 import { logout } from '../services/auth'
+import AppTitleContext from './AppTitleContext'
 
 const drawerWidth = 240
 
@@ -48,14 +49,13 @@ const styles = ({ palette, spacing, transitions, zIndex, mixins }: Theme) => ({
 interface IProps {
     open: boolean
     onMenuClick: () => void
-    title: string
     onMobile?: boolean
 }
 
 class AppBar extends React.Component<IProps & WithStyles<'appBar' | 'appBarShift' | 'hide' | 'menuButton' | 'toolbar'>> {
     public handleLogout = () => logout()
     public render() {
-        const { classes, open, title, onMenuClick, onMobile } = this.props
+        const { classes, open, onMenuClick, onMobile } = this.props
         return (
             <MaterialAppBar
                 position='absolute'
@@ -73,9 +73,13 @@ class AppBar extends React.Component<IProps & WithStyles<'appBar' | 'appBarShift
                         </IconButton>
                     </div>
                     <div style={{ flexGrow: 1 }}>
-                        <Typography variant='title' color='inherit' noWrap={true}>
-                            {title}
-                        </Typography>
+                        <AppTitleContext.Consumer>
+                            { ({ title }) => (
+                                <Typography variant='title' color='inherit' noWrap={true}>
+                                    {title}
+                                </Typography>
+                            )}
+                        </AppTitleContext.Consumer>
                     </div>
                     <div>
                         <Tooltip title={'Logout'}>

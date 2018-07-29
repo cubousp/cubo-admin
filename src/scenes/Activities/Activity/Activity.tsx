@@ -6,6 +6,8 @@ import Tabs from '@material-ui/core/Tabs'
 import * as React from 'react'
 import Query from 'react-apollo/Query'
 import SwipeableViews from 'react-swipeable-views'
+import AppTitleContext from '../../../App/AppTitleContext'
+import UpdateAppTitle from '../../../App/UpdateAppTitle'
 import { GET_ACTIVITY } from '../../../repositories/activities'
 import ActivityAbout from './ActivityAbout/ActivityAbout'
 import ActivityAttendance from './ActivityAttendance/ActivityAttendance'
@@ -78,15 +80,20 @@ class Activity extends React.Component<WithStyles<'root' | 'loadingContainer' | 
                             return `Error! ${error.message}`
                         }
                         return (
-                            <SwipeableViews
-                                axis={'x-reverse'}
-                                index={this.state.value}
-                                onChangeIndex={this.handleChangeIndex}
-                            >
-                                <ActivityAbout activity={activity} container={this.container} activeTab={this.state.value}/>
-                                <ActivityInscriptions activity={activity} container={this.container} activeTab={this.state.value}/>
-                                <ActivityAttendance activity={activity} container={this.container} activeTab={this.state.value}/>
-                            </SwipeableViews>
+                            <div>
+                                <SwipeableViews
+                                    axis={'x-reverse'}
+                                    index={this.state.value}
+                                    onChangeIndex={this.handleChangeIndex}
+                                >
+                                    <ActivityAbout activity={activity} container={this.container} activeTab={this.state.value}/>
+                                    <ActivityInscriptions activity={activity} container={this.container} activeTab={this.state.value}/>
+                                    <ActivityAttendance activity={activity} container={this.container} activeTab={this.state.value}/>
+                                </SwipeableViews>
+                                <AppTitleContext.Consumer>
+                                    { ({ updateTitle }) => <UpdateAppTitle title={activity.title} updateTitle={updateTitle}/> }
+                                </AppTitleContext.Consumer>
+                            </div>
                         )
                     }}
                 </Query>

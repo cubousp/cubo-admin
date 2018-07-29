@@ -6,6 +6,8 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import * as React from 'react'
 import Query from 'react-apollo/Query'
 import RichTextEditor from 'react-rte'
+import AppTitleContext from '../../App/AppTitleContext'
+import UpdateAppTitle from '../../App/UpdateAppTitle'
 import Dialog from '../../components/Dialog'
 import Snackbar from '../../components/Snackbar'
 import { getFeed } from '../../repositories/feed'
@@ -41,12 +43,12 @@ const styles = (theme: Theme) => ({
     },
     buttonContainer: {
         marginTop: 8,
-        position: 'relative' as 'relative'
+        position: 'relative' as 'relative',
     },
     container: {
         margin: 'auto',
         marginTop: 32,
-        maxWidth: 600
+        maxWidth: 600,
     },
     editor: {
         fontFamily: 'Roboto',
@@ -55,13 +57,13 @@ const styles = (theme: Theme) => ({
     },
     feedCardContainer: {
       marginTop: 16,
-      width: '100%'
+      width: '100%',
     },
     feedContainer: {
         alignItems: 'center',
         display: 'flex',
         flexDirection: 'column' as 'column',
-        marginTop: 64
+        marginTop: 64,
     },
 })
 
@@ -100,7 +102,7 @@ class Feed extends React.Component<IProps & WithStyles<'container' | 'feedCardCo
             deletingStory,
             storyId,
             openSnackbar,
-            snackbarMessage
+            snackbarMessage,
         } = this.props
         const toolbarConfig = {
             // Optionally specify the groups to display (displayed in the order listed).
@@ -113,12 +115,12 @@ class Feed extends React.Component<IProps & WithStyles<'container' | 'feedCardCo
                 {label: 'Normal', style: 'unstyled'},
                 {label: 'Heading Large', style: 'header-one'},
                 {label: 'Heading Medium', style: 'header-two'},
-                {label: 'Heading Small', style: 'header-three'}
+                {label: 'Heading Small', style: 'header-three'},
             ],
             INLINE_STYLE_BUTTONS: [
                 {label: 'Bold', style: 'BOLD', className: 'custom-css-class'},
                 {label: 'Italic', style: 'ITALIC'},
-                {label: 'Underline', style: 'UNDERLINE'}
+                {label: 'Underline', style: 'UNDERLINE'},
             ],
             display: ['INLINE_STYLE_BUTTONS', 'BLOCK_TYPE_BUTTONS', 'BLOCK_TYPE_DROPDOWN'],
         }
@@ -192,6 +194,9 @@ class Feed extends React.Component<IProps & WithStyles<'container' | 'feedCardCo
                    message={snackbarMessage}
                    variant={'success'}
                 />
+                <AppTitleContext.Consumer>
+                    { ({ updateTitle }) => <UpdateAppTitle title={'Feed'} updateTitle={updateTitle}/> }
+                </AppTitleContext.Consumer>
             </div>
 
         )
